@@ -31,6 +31,7 @@ public class AtaqueStandService {
         ataqueStandRepository.save(ataqueStandEntity);
         return ataqueStandEntity.getId();
     }
+    
 
     public AtaqueStandEntity updateAtaque(AtaqueStandEntity ataqueStandEntity) {
         return ataqueStandRepository.save(ataqueStandEntity);
