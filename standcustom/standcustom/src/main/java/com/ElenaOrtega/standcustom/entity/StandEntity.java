@@ -17,6 +17,7 @@ public class StandEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //Va a ser el nombre de la imagen 
     private Long id;
 
     
@@ -27,11 +28,7 @@ public class StandEntity {
     @Size(max = 1000)
     private String descripcion;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    @NotNull
-    private UserEntity usuario;
-
+    
     // Constructor, getters y setters
 
     public StandEntity() {
@@ -40,7 +37,7 @@ public class StandEntity {
     public StandEntity(String nombre, String descripcion, UserEntity usuario) {
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.usuario = usuario;
+       
     }
 
     // Getters y setters
@@ -69,11 +66,5 @@ public class StandEntity {
         this.descripcion = descripcion;
     }
 
-    public UserEntity getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(UserEntity usuario) {
-        this.usuario = usuario;
-    }
+  
 }
