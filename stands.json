@@ -1,545 +1,543 @@
-{
+
+[{
     "id": "1",
     "nombre": "The World",
-    "imagen": "theworld.png",
+    
     "descripcion": "Time Stop, Super Speed, Super Strength"
 },
 {
     "id": "2",
     "nombre": "Hermit Purple",
-    "imagen": "hermitpurple.webp",
+   
     "descripcion": "Transmit Messages, Grappling, Creating imagens"
 },
 {
     "id": "3",
     "nombre": "Star Platinum",
-    "imagen": "starplatinum.png",
-    "descripcion": "Time Stop, Super Speed, Super Strength, Breath, Star-Finger""ORAORAORAORAORAORA"
+  
+    "descripcion": "Time Stop, Super Speed, Super Strength, Breath, Star-Finger"
 },
 {
     "id": "4",
     "nombre": "Magician's Red",
-    "imagen": "magicianred.png",
+    
     "descripcion": "Pyrokinesis, Super Strength, Super Speed, Cross Fire Hurricane, Red Bind, Life Detector"
-}
+},
 
     {
     "id": "5",
     "nombre": "Hierophant Green",
-    "imagen": "hierophantgreen.png",
+    
     "descripcion": "Coiled Body, Marionette Controll, Emerald Splash"
 },
 {
     "id": "6",
     "nombre": "Silver Chariot",
-    "imagen": "silverchariot.png",
+   
     "descripcion": "Speed, Power, Precision, Armor, Sword Shot"
 }
-    {
+   , {
     "id": "7",
     "nombre": "The Fool",
-    "imagen": "thefool.webp",
+    
     "descripcion": "Sand Manifestation, Shapeshifting"
 },
 {
     "id": "8",
     "nombre": "Justice",
-    "imagen": "justice.webp",
+   
     "descripcion": "Fog String Puppetry, Illusions"
 },
 {
     "id": "9",
     "nombre": "Cream",
-    "imagen": "cream.png",
-    "descripcion": "Void",
+  
+    "descripcion": "Void"
 },
 {
     "id": "10",
     "nombre": "Emperor",
-    "imagen": "emperor.webp",
+   
     "descripcion": "Homing Bullets"
 },
 {
     "id": "11",
     "nombre": "Hanged Man",
-    "imagen": "hangedman.png",
+   
     "descripcion": "Light Manifestation (reflections), wrist knives"
 },
 {
     "id": "12",
     "nombre": "Osiris",
-    "imagen": "osiris.webp",
+   
     "descripcion": "Soul Steal"
 },
 {
     "id": "13",
     "nombre": "Atum",
-    "imagen": "atum.webp",
+    
     "descripcion": "Soul Steal, Binary Soul Reading"
 },
 {
     "id": "14",
     "nombre": "Horus",
-    "imagen": "horus.webp",
+    
     "descripcion": "Cryokinesis"
 },
 {
     "id": "15",
     "nombre": "Geb",
-    "imagen": "geb.png",
+  
     "descripcion": "Water Amorphism"
 },
 {
     "id": "16",
     "nombre": "Bastet",
-    "imagen": "bastet.webp",
+   
     "descripcion": "Magnetic Attraction"
 },
 {
     "id": "17",
     "nombre": "Sethan",
-    "imagen": "sethan.webp",
+   
     "descripcion": "Shadow Reflection, Age Regression"
 },
 {
     "id": "18",
     "nombre": "Khnum",
-    "imagen": "khnum.webp",
+ 
     "descripcion": "Transfiguration"
 },
 {
     "id": "19",
     "nombre": "Tohth",
-    "imagen": "tohth.png",
+   
     "descripcion": "Prediction"
 },
 {
     "id": "20",
     "nombre": "Anubis",
-    "imagen": "anubis.png",
+    
     "descripcion": "Adaptation, Selective Intangibility, Mind Control"
 },
 {
     "id": "21",
     "nombre": "Tower of Gray",
-    "imagen": "towerofgray.png",
+   
     "descripcion": "Secondary Jaw, High Speed"
 },
 {
     "id": "22",
     "nombre": "Dark Blue Moon",
-    "imagen": "darkbluemoon.webp",
+   
     "descripcion": "Sharp Scales, Barnacles, Aquatic Prowess"
 },
 {
     "id": "23",
     "nombre": "Strength",
-    "imagen": "strength.webp",
+  
     "descripcion": "Ship Manipulation"
 },
 {
     "id": "24",
     "nombre": "Ebony Devil",
-    "imagen": "ebonydevil.webp",
+  
     "descripcion": "Hatered Amplification"
 },
 {
     "id": "25",
     "nombre": "Yellow Temperance",
-    "imagen": "yellowtemperance.png",
+   
     "descripcion": "Assimilation, Physical Imperviousness, Appearance Replication"
 },
 {
     "id": "26",
     "nombre": "Empress",
-    "imagen": "empress.webp",
+   
     "descripcion": "Parasitism, Flesh Disguise"
 },
 {
     "id": "27",
     "nombre": "Wheel of Fortune",
-    "imagen": "wheel.png",
+    
     "descripcion": "Transformation from Confidence, Gasoline Bullets, Radio Comunication"
 },
 {
     "id": "28",
     "nombre": "Lovers",
-    "imagen": "lovers.png",
+   
     "descripcion": "Pain Synchronization, Organic Waste Clones, Spores Cultivation, Range"
 },
 {
     "id": "29",
     "nombre": "Sun",
-    "imagen": "sun.webp",
+    
     "descripcion": "Sun Replica, Lasers"
 },
 {
     "id": "30",
     "nombre": "Death Thirteen",
-    "imagen": "death13.webp",
+   
     "descripcion": "Dreamworld Control"
 },
 {
     "id": "31",
     "nombre": "Judgement",
-    "imagen": "judgement.webp",
+    
     "descripcion": "False Wish Granting"
 },
 {
     "id": "32",
     "nombre": "High Priestess",
-    "imagen": "highpriestess.png",
+   
     "descripcion": "Mineral Posession and Reformation"
 },
 {
     "id": "33",
     "nombre": "Crazy Diamond",
-    "Shining Diamond""imagen": "crazydiamond.png",
-    "descripcion": "Super Strength, Super Speed, Precision, Restoration""DORARARA"
+  
+    "descripcion": "Super Strength, Super Speed, Precision, Restoration"
 },
 {
     "id": "34",
     "nombre": "The Hand",
-    "imagen": "thehand.png",
+   
     "descripcion": "Erasure"
 },
 {
     "id": "35",
     "nombre": "Bad Company",
-    "Worse Company""imagen": "badcompany.webp",
+   
     "descripcion": "Military Firepower"
 },
 {
     "id": "36",
     "nombre": "Echoes",
-    "imagen": "echoes.png",
-    "descripcion": "ACT 1: Sound Generation, ACT 2: Sound Effects, ACT 3: Freeze""Ok, Master! Let's kill da ho! Beeetch!"
+    
+    "descripcion": "ACT 1: Sound Generation, ACT 2: Sound Effects, ACT 3: Freeze"
 },
 {
     "id": "37",
     "nombre": "Heaven's Door",
-    "imagen": "heavensdoor.png",
+    
     "descripcion": "Book Transmutation, Memory Removal, Written-in Commands"
 },
 {
     "id": "38",
     "nombre": "Harvest",
-    "imagen": "harvest.webp",
+   
     "descripcion": "Strength in Numbers (500), Persistence, Harvesting, Hypodermic Needle, Range"
 },
 {
     "id": "39",
     "nombre": "Earth Wind and Fire",
-    "Terra Ventus""imagen": "earthwind.jpg",
+  
     "descripcion": "Shapeshifting"
 },
 {
     "id": "40",
     "nombre": "Love Deluxe",
-    "imagen": "lovedeluxe.png",
+   
     "descripcion": "Hair Manipulation"
 },
 {
     "id": "41",
     "nombre": "Highway Star",
-    "imagen": "highwaystar.png",
+   
     "descripcion": "Room Creation, Lifeforce Steal, Body Dismantlement, Enhanced sense of Smell, Speed, Range"
 },
 {
     "id": "42",
     "nombre": "Surface",
-    "imagen": "surface.webp",
+    
     "descripcion": "Mimicry, Forced Synchronization"
 },
 {
     "id": "43",
     "nombre": "Pearl Jam",
-    "imagen": "pearljam.webp",
-    "descripcion": "Curative Cooking""MESHAA"
+ 
+    "descripcion": "Curative Cooking"
 },
 {
     "id": "44",
     "nombre": "Cinderella",
-    "imagen": "cinderella.png",
+    
     "descripcion": "Body Part Replacement, Permanent Body Replacement"
 },
 {
     "id": "45",
     "nombre": "Killer Queen",
-    "Deadly Queen""imagen": "killerqueen.webp",
+   
     "descripcion": "Bomb Transmutation, Air Bomb Transmutation, Sheer Heart Attack, Bites the Dust"
 },
 {
     "id": "46",
     "nombre": "Atom Heart Father",
-    "imagen": "yoshihorokira.webp",
+   
     "descripcion": "Supernatural Photography"
 },
 {
     "id": "47",
     "nombre": "Stray Cat",
-    "imagen": "straycat.png",
+   
     "descripcion": "Reincarnation, Air Manipulation, Plant/Cat Constitution"
 },
 {
     "id": "48",
     "nombre": "Red Hot Chili Pepper",
-    "imagen": "chilipepper.png",
+   
     "descripcion": "Electricity Absorption, Electrical Transfer, Speed"
 },
 {
     "id": "49",
     "nombre": "Aqua Necklace",
-    "imagen": "aquanecklace.webp",
+   
     "descripcion": "Liquid Form, Possession"
 },
 {
     "id": "50",
     "nombre": "Ratt",
-    "imagen": "ratt.webp",
+  
     "descripcion": "Melting Darts"
 },
 {
     "id": "51",
     "nombre": "Boy II Man",
-    "imagen": "boy2man.webp",
+   
     "descripcion": "Energy Theft"
 },
 {
     "id": "52",
     "nombre": "Super Fly",
-    "imagen": "superfly.webp",
+    
     "descripcion": "Occupant Restriction, Damage Reflection"
 },
 {
     "id": "53",
     "nombre": "Enigma",
-    "imagen": "enigma.png",
+    
     "descripcion": "Paper Seal"
 },
 {
     "id": "54",
     "nombre": "Cheap Trick",
-    "imagen": "cheaptrick.png",
+   
     "descripcion": "Attachement, Universal Speech"
 },
 {
     "id": "55",
     "nombre": "The Lock",
-    "imagen": "lock.webp",
+   
     "descripcion": "Guilt Increase, Lie Detection"
 },
 {
     "id": "56",
     "nombre": "Achtung Baby",
-    "imagen": "shizuka.webp",
+    
     "descripcion": "Invisibility"
 },
 {
     "id": "57",
     "nombre": "Gold Experience",
-    "imagen": "goldexperience.png",
+   
     "descripcion": "Create Life, Life Shot, Flesh/Organ Creation, Life Sensor"
 },
 {
     "id": "58",
     "nombre": "Gold Experience Requiem",
-    "imagen": "goldrequiem.png",
+   
     "descripcion": "Return to Zero, Life Giver, Super Strength, Super Speed, Autonomy"
-}
+},
     {
     "id": "59",
     "nombre": "Sticky Fingers",
-    "Zipper Man""imagen": "stickyfingers.png",
+   
     "descripcion": "Zippers"
 },
 {
     "id": "60",
     "nombre": "Moody Blues",
-    "imagen": "moodyblues.png",
+   
     "descripcion": "Chronological Rebroadcasting"
 },
 {
     "id": "61",
     "nombre": "Sex Pistols",
-    "Six Bullets""imagen": "sexpistols.png",
+  
     "descripcion": "Bullet Control, Deflection, Enhanced Perception, Enhanced Reloading, Autonomy, Persistence"
 },
 {
     "id": "62",
     "nombre": "Aerosmith",
-    "imagen": "aerosmith.png",
-    "descripcion": "Machine Guns and Bomb, Carbon Dioxide Radar""VOLAVOLAVOLA! VOLARE VIA!"
+    
+    "descripcion": "Machine Guns and Bomb, Carbon Dioxide Radar"
 },
 {
     "id": "63",
     "nombre": "Purple Haze",
-    "Purple Smoke",
-    "imagen": "purplehaze.png",
+   
     "descripcion": "Killer Infection"
 },
 {
     "id": "64",
     "nombre": "Spice Girl",
-    "imagen": "spicegirl.png",
+  
     "descripcion": "Softening"
 },
 {
     "id": "65",
     "nombre": "Chariot Requiem",
-    "Requiem",
-    "imagen": "chariotrequiem.png",
+  
     "descripcion": "Regeneration, Soul Manipulation, Grand Scale Soul Swapping, Stand Manipulation, Complete Alteration of All Life, Autonomy"
 },
 {
     "id": "66",
     "nombre": "Mr. President",
-    "imagen": "mrpresident.png",
+    
     "descripcion": "Hidden Room"
 },
 {
     "id": "67",
     "nombre": "King Crimson",
-    "imagen": "kingcrimson.png",
+   
     "descripcion": "Superior Strength, Time Erasure, Epitaph (Time Prediction)"
 },
 {
     "id": "68",
     "nombre": "Clash",
-    "imagen": "clash.png",
+   
     "descripcion": "Liquid Warp"
 },
 {
     "id": "69",
     "nombre": "Talking Head",
-    "Talking Mouth""imagen": "talkinghead.png",
+   
     "descripcion": "True-Statement Elimination, Tongue Control"
 },
 {
     "id": "70",
     "nombre": "Notorious B.I.G",
-    "imagen": "notorious.png",
+   
     "descripcion": "Post-Mortem Activation, Energy Absorption, Partial Symbiosis, Speed Detection"
 },
 {
     "id": "71",
     "nombre": "Green Day",
-    "imagen": "greenday.png",
+    
     "descripcion": "Mold Infestation, Dismemberment Control"
 },
 {
     "id": "72",
     "nombre": "Oasis",
-    "Sanctuary""オアシス",
-    "imagen": "oasis.webp",
+    
     "descripcion": "User Suit, Ground Liquefaction, Physical Enhancement"
 },
 {
     "id": "73",
     "nombre": "Black Sabbath",
-    "imagen": "blacksabbath.png",
-    "descripcion": "Long-Range, Shadow Power, Soul Pull, Storage",
+   
+    "descripcion": "Long-Range, Shadow Power, Soul Pull, Storage"
 },
 {
     "id": "74",
     "nombre": "Soft Machine",
-    "imagen": "softmachine.png",
+    
     "descripcion": "Pinch Deflating"
 },
 {
     "id": "75",
     "nombre": "Kraft Work",
-    "imagen": "kraftwork.png",
+    
     "descripcion": "Kinetic Energy Manipulation, Position Locking, Kinetic Energy Accumulation"
 },
 {
     "id": "76",
     "nombre": "Metallica",
-    "imagen": "metallica.png",
-    "descripcion": "Iron Manipulation, Invisibility, Stand Posession""LOOOOOOOAAAAAAD"
+  
+    "descripcion": "Iron Manipulation, Invisibility, Stand Posession"
 },
 {
     "id": "77",
     "nombre": "Little Feet",
-    "imagen": "littlefeet.png",
+    
     "descripcion": "Shrinking, Speed"
 },
 {
     "id": "78",
     "nombre": "Man in the Mirror",
-    "imagen": "mirrorman.png",
+    
     "descripcion": "Mirror World Entry"
 },
 {
     "id": "79",
     "nombre": "The Grateful Dead",
-    "imagen": "grateful.png",
-    "descripcion": "Accelerated Aging",
+   
+    "descripcion": "Accelerated Aging"
 },
 {
     "id": "80",
     "nombre": "Beach Boy",
-    "imagen": "beachboy.webp",
+    
     "descripcion": "Hook and Line, Extreme Line Sensibility, Damage Reflection"
 },
 {
     "id": "81",
     "nombre": "Baby Face",
-    "imagen": "babyface.png",
-    "descripcion": "Homunculus Generation, Computer, Junior, Matter Manipulation, Physical Growth and Aging, Autonomy",
+   
+    "descripcion": "Homunculus Generation, Computer, Junior, Matter Manipulation, Physical Growth and Aging, Autonomy"
 },
 {
     "id": "82",
     "nombre": "White Album",
-    "imagen": "whitealbum.png",
+   
     "descripcion": "User Suit, Cryokinesis, Ice Armor, Gently Weeps"
 },
 {
     "id": "83",
     "nombre": "Rolling Stones",
-    "imagen": "rollingstone.webp",
+   
     "descripcion": "Homing to Dying Target"
 },
 {
     "id": "84",
     "nombre": "Stone Free",
-    "imagen": "stonefree.webp",
+   
     "descripcion": "String Decomposition, String Manipulation, Speed, Strength"
 },
 {
     "id": "85",
     "nombre": "Kiss",
-    "imagen": "kiss.png",
+   
     "descripcion": "Duplicating Stickers"
 },
 {
     "id": "86",
     "nombre": "Burning Down the House",
-    "imagen": "burning.webp",
+   
     "descripcion": "Ghost Objects, Ghost Room"
 },
 {
     "id": "87",
     "nombre": "Foo Fighters",
-    "imagen": "ff.webp",
+   
     "descripcion": "Plankton Colony Form, Body Invasion, Water Control, Plankton Shot, Wound Seal"
 },
 {
     "id": "88",
     "nombre": "Diver Down",
-    "imagen": "diverdown.png",
+  
     "descripcion": "Stand Power Storage, Restructuring"
 },
 {
     "id": "89",
     "nombre": "Weather Report",
-    "imagen": "heavyweather.webp",
+    
     "descripcion": "Weather Control, Air and Wind Manipulation, Humidity and Cloud Manipulation, Oxygen Build-Up, Cloud Suit, Heavy Weather, Snail Projection"
 },
 {
     "id": "90",
     "nombre": "Goo Goo Dolls",
-    "imagen": "googoo.webp",
+   
     "descripcion": "Size Reduction"
 },
 {
@@ -547,14 +545,14 @@
     "nombre": "Whitesnake",
     
     
-    "imagen": "whitesnake.webp",
+    
     "descripcion": "Melt Your Heart  Illusion, Disc Creation"
 },
 {
     "id": "92",
     "nombre": "C-Moon",
    
-    "imagen": "cmoon.webp",
+   
     "descripcion": "Gravity Shift, Surface Inversion, Time Acceleration, Speed, Power"
    
 },
@@ -562,149 +560,149 @@
     "id": "93",
     "nombre": "Made in Heaven",
    
-    "imagen": "madeinheaven.webp",
+ 
     "descripcion": "Time Acceleration, Universal Reset"
 },
 {
     "id": "94",
     "nombre": "Under World",
    
-    "imagen": "underworld.png",
+   
     "descripcion": "Memory Unearthing"
 },
 {
     "id": "95",
     "nombre": "Sky High",
  
-    "imagen": "skyhigh.webp",
+   
     "descripcion": "Rods (sky fish), Rod Manipulation, Localized Illness"
 },
 {
     "id": "96",
     "nombre": "Bohemian Rhapsody",
     
-    "imagen": "bohemian.png",
+    
     "descripcion": "Fiction Realization"
 },
 {
     "id": "97",
     "nombre": "Green, Green Grass of Home",
    
-    "imagen": "greengreen.webp",
+   
     "descripcion": "Shrinking"
 },
 {
     "id": "98",
     "nombre": "Manhattan Transfer",
    
-    "imagen": "manhattan.webp",
+   
     "descripcion": "Wind Reading, Bullet Redirection"
 },
 {
     "id": "99",
     "nombre": "Limp Bizkit",
     
-    "imagen": "limpbizkit.jpg",
-    "descripcion": "Invisible Reincarnation",
+   
+    "descripcion": "Invisible Reincarnation"
 },
 {
     "id": "100",
     "nombre": "Jail House Lock",
 
-    "imagen": "jailhouselock.webp",
+   
     "descripcion": "Short-term Memory Loss"
 },
 {
     "id": "101",
     "nombre": "Marilyn Manson",
    
-    "imagen": "marilynmanson.png",
+  
     "descripcion": "Debt Collection"
 },
 {
     "id": "102",
     "nombre": "Jumpin' Jack Flash",
     
-    "imagen": "jumpinjack.png",
+   
     "descripcion": "Gravitational Removal, Built-in Centrifuges"
 },
 {
     "id": "103",
     "nombre": "Dragon's Dream",
    
-    "imagen": "dragon.png",
+ 
     "descripcion": "Autonomy, Feng Shui, Feng Shui Luck Reading, Neutrality"
 },
 {
     "id": "104",
     "nombre": "Yo-Yo Ma",
    
-    "imagen": "yoyo.png",
+    
     "descripcion": "Automatic Stand, Intelligence, Acid Saliva, Indestructible"
 },
 {
     "id": "105",
     "nombre": "Survivor",
     
-    "imagen": "survivor.jpg",
+    
     "descripcion": "Aggresiveness Stimulation, Automatic Stand"
 },
 {
     "id": "106",
     "nombre": "Planet Waves",
     
-    "imagen": "planetwaves.png",
+   
     "descripcion": "Meteorite Attraction"
 },
 {
     "id": "107",
     "nombre": "Highway to Hell",
  
-    "imagen": "highway.png",
+    
     "descripcion": "Damage Sharing"
 },
 {
     "id": "108",
     "nombre": "Tusk",
    
-    "imagen": "tusk.jpg",
+   
     
-    "descripcion": "ACT1: Spinning Nails, ACT2: Golden Rectangle Nails, ACT3: Spatial Wormhole, ACT4: Infinite Rotation",
+    "descripcion": "ACT1: Spinning Nails, ACT2: Golden Rectangle Nails, ACT3: Spatial Wormhole, ACT4: Infinite Rotation"
     
 },
 {
     "id": "109",
     "nombre": "Ball Breaker",
    
-    "imagen": "ballbreaker.png",
+    
     "descripcion": "Golden Spin, Spin"
 },
 {
     "id": "110",
     "nombre": "Ticket to Ride",
    
-    "imagen": "ticket.png",
+    
     "descripcion": "Blade of Tears, Divine Protection"
 },
 {
     "id": "111",
     "nombre": "Cream Starter",
  
-    "imagen": "creamstarter.webp",
+   
     "descripcion": "Flesh Spray"
 },
 {
     "id": "112",
     "nombre": "Oh! Lonesome Me",
 
-    "imagen": "lonesome.webp",
+ 
     "descripcion": "Rope Transfer"
 },
 {
     "id": "113",
     "nombre": "Scary Monsters",
     
-    "imagen": "scarymonsters.webp",
+   
     "descripcion": "Dinosaur Infection, Dinosaur Morph, Fossilization"
   
 },
@@ -712,14 +710,14 @@
     "id": "114",
     "nombre": "20th Century Boy",
 
-    "imagen": "20thcentury.webp",
+    
     "descripcion": "Absolute Defense"
 },
 {
     "id": "115",
     "nombre": "Hey Ya!",
  
-    "imagen": "heyya.webp",
+    
     "descripcion": "Cheer On"
     
 },
@@ -727,282 +725,265 @@
     "id": "116",
     "nombre": "Dirty Deeds Done Dirt Cheap",
 
-    "imagen": "d4c.webp",
-    "descripcion": "Dimension Hop, Love Train, Misfortune Redirection",
+    
+    "descripcion": "Dimension Hop, Love Train, Misfortune Redirection"
     
 },
 {
     "id": "117",
     "nombre": "Catch the Rainbow",
     
-    "imagen": "catchtherainbow.jpg",
+  
     "descripcion": "Mask Form, Rain Manipulation"
 },
 {
     "id": "118",
     "nombre": "Tubular Bells",
  
-    "imagen": "tubularbells.png",
     "descripcion": "Metal Blowing"
 },
 {
     "id": "119",
     "nombre": "Mandom",
 
-    "imagen": "mandom.jpg",
+  
     "descripcion": "Time Rewind"
 },
 {
     "id": "120",
     "nombre": "Civil War",
    
-    "imagen": "civilwar.webp",
+    
     "descripcion": "Guilt Materialization, Guilt Reanimation"
 },
 {
     "id": "121",
     "nombre": "Chocolate Disco",
     
-    "imagen": "chocolatedisco.webp",
+    
     "descripcion": "Teleporting Grid"
 },
 {
     "id": "122",
     "nombre": "Tatoo You!",
     
-    "imagen": "tatoo.webp",
+    
     "descripcion": "Body Slide, Multiple Users"
 },
 {
     "id": "123",
     "nombre": "Wired",
-    
-    "imagen": "wired.webp",
+  
     "descripcion": "Tongue Hooks"
 },
 {
     "id": "124",
     "nombre": "In a Silent Way",
    
-    "imagen": "silentway.jpg",
+   
     "descripcion": "Sound Storage, Sound Construct"
 },
 {
     "id": "125",
     "nombre": "Tomb of the Boom 1",
     
-    "imagen": "tomb1.png",
+  
     "descripcion": "Magnetism, Metal Replication, Hidden Blades"
 },
 {
     "id": "126",
     "nombre": "Tomb of the Boom 2",
     
-    "imagen": "tomb2.png",
+    
     "descripcion": "Extreme Magnetism"
 },
 {
     "id": "127",
     "nombre": "Tomb of the Boom 3",
-    "トゥーム・オブ・ザ・ブーム",
-    "imagen": "tomb3.png",
-    "descripcion": "Magnetism, Iron Sand, Iron Manipulation",
+  
+    
+    "descripcion": "Magnetism, Iron Sand, Iron Manipulation"
 },
 {
     "id": "128",
     "nombre": "Boku no Rhythm wo Kiitekure",
-    "ボクのリズムを聴いてくれ",
-    "imagen": "boku.webp",
-    "descripcion": "Contact Bombs",
+   
+    "descripcion": "Contact Bombs"
 },
 {
     "id": "129",
     "nombre": "Sugar Mountain",
-    "シュガー・マウンテンの泉",
-    "imagen": "sugartree.webp",
-    "descripcion": "The Guardian, Trial of Avidity, Trial of Avarice",
+   
+    "descripcion": "The Guardian, Trial of Avidity, Trial of Avarice"
 },
 {
     "id": "130",
     "nombre": "Soft & Wet",
-    "ソフト＆ウェット",
-    "imagen": "softwet.webp",
-    "descripcion": "Spin, Bubble Generation, Plunder, Bomb Creation, Go Beyond",
-    "ORA ORA ORA"
+    
+    "descripcion": "Spin, Bubble Generation, Plunder, Bomb Creation, Go Beyond"
+  
 },
 {
     "id": "131",
     "nombre": "Paisley Park",
-    "ペイズリー・パーク",
-    "imagen": "paisley.png",
-    "descripcion": "Guidance, Electronics Manipulation, Shapeshifting",
+   
+    "descripcion": "Guidance, Electronics Manipulation, Shapeshifting"
 },
 {
     "id": "132",
     "nombre": "Doggy Style",
-    "ドギー・スタイル",
-    "imagen": "doggystyle.webp",
-    "descripcion": "Skin Peeling, Spin",
+   
+    "descripcion": "Skin Peeling, Spin"
 },
 {
     "id": "133",
     "nombre": "Nut King Call",
-    "ナット・キング・コール",
-    "imagen": "nutkingcall.webp",
-    "descripcion": "Nuts and Bolts",
+    
+    "descripcion": "Nuts and Bolts"
 },
 {
     "id": "134",
     "nombre": "Paper Moon King",
-    "ペーパー・ムーン・キング",
-    "imagen": "papermoon.png",
-    "descripcion": "Living Origami, Sensory Manipulation",
+  
+    "descripcion": "Living Origami, Sensory Manipulation"
 },
 {
     "id": "135",
     "nombre": "King Nothing",
-    "キング・ナッシング",
-    "imagen": "kingnothing.webp",
-    "descripcion": "Scent Tracking, Jigsaw Constitution",
+   
+    "descripcion": "Scent Tracking, Jigsaw Constitution"
 },
 {
     "id": "136",
     "nombre": "Space Trucking",
-    "スペース・トラッキング",
-    "imagen": "spacetrucking.webp",
-    "descripcion": "Dimensional Storage",
+   
+    "descripcion": "Dimensional Storage"
 },
 {
     "id": "137",
     "nombre": "California King Bed",
-    "カリフォルニア・キング・ベッドちゃん",
-    "imagen": "californiaking.webp",
-    "descripcion": "Memory Theft",
+    
+    "descripcion": "Memory Theft"
 },
 {
     "id": "138",
     "nombre": "Walking Heart",
-    "ウォーキング・ハート",
-    "imagen": "walkingheart.webp",
-    "descripcion": "Heel Spikes",
+    
+    "descripcion": "Heel Spikes"
 },
 {
     "id": "139",
     "nombre": "Speed King",
-    "スピード・キング",
-    "imagen": "speedking.webp",
-    "descripcion": "Heat Accumulation",
+    
+    "descripcion": "Heat Accumulation"
 },
 {
     "id": "140",
     "nombre": "Awaking III Leaves",
-    "アウェイキング・三リーブス",
-    "imagen": "awakingleaves.png",
-    "descripcion": "Vector Manipulation",
+   
+    "descripcion": "Vector Manipulation"
 },
 {
     "id": "141",
     "nombre": "Born This Way",
-    "ボーン・ディス・ウェイ",
-    "imagen": "bornthisway.webp",
-    "descripcion": "Motorcycle, Summon Through Opening, Freezing Wind",
+  
+    "descripcion": "Motorcycle, Summon Through Opening, Freezing Wind"
 },
 {
     "id": "142",
     "nombre": "Killer Queen",
-    "キラークイーン",
-    "imagen": "killerqueen8.png",
-    "descripcion": "Exploding Bubbles",
-    "WRYYYYYEEEEAH!"
+   
+    "descripcion": "Exploding Bubbles"
+   
 },
 {
     "id": "143",
     "nombre": "Love Love Deluxe",
-    "ラブラブデラックス",
+    
     "imagen": "lovelovedeluxe.webp",
-    "descripcion": "Hair Growth",
+    "descripcion": "Hair Growth"
 },
 {
     "id": "144",
     "nombre": "Vitamin C",
-    "ビタミンC",
+
     "imagen": "vitaminc.webp",
-    "descripcion": "Organic Softening",
+    "descripcion": "Organic Softening"
 },
 {
     "id": "145",
     "nombre": "I Am a Rock",
-    "アイ・アム・ア・ロック",
+  
     "imagen": "iamarock.jpg",
-    "descripcion": "Selective Attraction",
+    "descripcion": "Selective Attraction"
 },
 {
     "id": "146",
     "nombre": "Doobie Wah!",
-    "ドゥービー・ワゥ！",
+   
     "imagen": "doobiewah.webp",
-    "descripcion": "Pursuing Vortex",
+    "descripcion": "Pursuing Vortex"
 },
 {
     "id": "147",
     "nombre": "Schott Key No.1",
-    "ショット・キーNo.1",
+    
     "imagen": "schottkey1.webp",
-    "descripcion": "Left Hand-Right Hand Transference",
+    "descripcion": "Left Hand-Right Hand Transference"
 },
 {
     "id": "148",
     "nombre": "Schott Key No.2",
-    "ショット・キーNo.2",
+   
     "imagen": "schottkey2.webp",
-    "descripcion": "Toxic Gas",
+    "descripcion": "Toxic Gas"
 },
 {
     "id": "149",
     "nombre": "Blue Hawaii",
-    "ブルー・ハワイ",
+   
     "imagen": "bluehawaii.webp",
-    "descripcion": "Mind control Contagion",
+    "descripcion": "Mind control Contagion"
 },
 {
     "id": "150",
     "nombre": "Brain Storm",
-    "ブレイン・ストーム",
+   
     "imagen": "brainstorm.webp",
-    "descripcion": "Hemolysis",
+    "descripcion": "Hemolysis"
 },
 {
     "id": "151",
     "nombre": "Ozon Baby",
-    "オゾン・ベイビー",
+   
     "imagen": "ozonbaby.png",
-    "descripcion": "Pressure Manipulation",
+    "descripcion": "Pressure Manipulation"
 },
 {
     "id": "152",
     "nombre": "Doctor Wu",
-    "ドクター・ウー",
+  
     "imagen": "doctorwu.png",
-    "descripcion": "Gravel Transformation",
+    "descripcion": "Gravel Transformation"
 },
 {
     "id": "153",
     "nombre": "Wonder of U",
-    "ワンダー・オブ・U",
+  
     "imagen": "wonderofu.png",
-    "descripcion": "Sentience, Autonomy, Identity Assumption, Long-Range Illusion Creation, Calamity Manipulation, Knowledge",
-    "The flow of things will always lead to calamity."
+    "descripcion": "Sentience, Autonomy, Identity Assumption, Long-Range Illusion Creation, Calamity Manipulation, Knowledge"
+    
 },
 {
     "id": "154",
     "nombre": "Fun Fun Fun",
-    "imagen": "funfunfun.png",
+    
     "descripcion": "Body Manipulation"
 },
 {
     "id": "155",
     "nombre": "karma",
-    "imagen": "karma.jpg",
+  
     "descripcion": "juez temporal"
 }
-}
+]
