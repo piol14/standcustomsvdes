@@ -13,8 +13,9 @@ public class AtaqueStandEntity {
     @Column(length = 1)
     private String velocidad;
 
-    @Column( length = 1)
+    @Column(length = 1, name = "potencialDesarollo")
     private String potencialDesarollo;
+  
 
     @Column(length = 1)
     private String alcance;
@@ -28,16 +29,14 @@ public class AtaqueStandEntity {
     @Column(length = 1)
     private String acierto;
 
- 
-
     // Constructores, getters y setters
-public AtaqueStandEntity()
-{
+    public AtaqueStandEntity() {
 
-}
-    public AtaqueStandEntity( String velocidad, String potencialDesarollo, String alcance, String poder,
+    }
+
+    public AtaqueStandEntity(String velocidad, String potencialDesarollo, String alcance, String poder,
             String aguante, String acierto) {
-        
+
         this.velocidad = velocidad;
         this.potencialDesarollo = potencialDesarollo;
         this.alcance = alcance;
@@ -66,8 +65,8 @@ public AtaqueStandEntity()
         return potencialDesarollo;
     }
 
-    public void setPotencialDesarollo(String potencialDesarrollo) {
-        this.potencialDesarollo = potencialDesarrollo;
+    public void setPotencialDesarollo(String potencialDesarollo) {
+        this.potencialDesarollo = potencialDesarollo;
     }
 
     public String getAlcance() {
@@ -102,5 +101,5 @@ public AtaqueStandEntity()
         this.acierto = acierto;
     }
 
-  
 }
+

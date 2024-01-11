@@ -34,7 +34,7 @@ public class AtaqueStandApi {
 
     @PostMapping
        public ResponseEntity<Long> create(@RequestBody AtaqueStandEntity ataqueStandEntity) {
-        return ResponseEntity.ok(ataquesStandService.create(ataqueStandEntity));
+        return ResponseEntity.ok(ataquesStandService.createAtaque(ataqueStandEntity));
     }
    
 
