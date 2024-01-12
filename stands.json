@@ -889,85 +889,71 @@
   
     "descripcion": "Motorcycle, Summon Through Opening, Freezing Wind"
 },
+
 {
     "id": "142",
-    "nombre": "Killer Queen",
-   
-    "descripcion": "Exploding Bubbles"
-   
-},
-{
-    "id": "143",
-    "nombre": "Love Love Deluxe",
-    
-    "imagen": "lovelovedeluxe.webp",
-    "descripcion": "Hair Growth"
-},
-{
-    "id": "144",
     "nombre": "Vitamin C",
 
-    "imagen": "vitaminc.webp",
+   
     "descripcion": "Organic Softening"
 },
 {
-    "id": "145",
+    "id": "143",
     "nombre": "I Am a Rock",
   
-    "imagen": "iamarock.jpg",
+    
     "descripcion": "Selective Attraction"
 },
 {
-    "id": "146",
+    "id": "144",
     "nombre": "Doobie Wah!",
    
-    "imagen": "doobiewah.webp",
     "descripcion": "Pursuing Vortex"
 },
 {
-    "id": "147",
+    "id": "145",
     "nombre": "Schott Key No.1",
     
-    "imagen": "schottkey1.webp",
+   
     "descripcion": "Left Hand-Right Hand Transference"
 },
 {
-    "id": "148",
+    "id": "146",
     "nombre": "Schott Key No.2",
    
-    "imagen": "schottkey2.webp",
+
     "descripcion": "Toxic Gas"
 },
 {
-    "id": "149",
+    "id": "147",
     "nombre": "Blue Hawaii",
    
-    "imagen": "bluehawaii.webp",
+   
     "descripcion": "Mind control Contagion"
 },
 {
-    "id": "150",
+    "id": "148",
     "nombre": "Brain Storm",
    
-    "imagen": "brainstorm.webp",
+    
     "descripcion": "Hemolysis"
 },
 {
-    "id": "151",
+    "id": "149",
     "nombre": "Ozon Baby",
    
-    "imagen": "ozonbaby.png",
+    
     "descripcion": "Pressure Manipulation"
 },
 {
-    "id": "152",
+    "id": "150",
     "nombre": "Doctor Wu",
   
     "imagen": "doctorwu.png",
     "descripcion": "Gravel Transformation"
 },
 {
-    "id": "153",
+    "id": "151",
     "nombre": "Wonder of U",
   
     "imagen": "wonderofu.png",
@@ -975,15 +961,10 @@
     
 },
 {
-    "id": "154",
+    "id": "152",
     "nombre": "Fun Fun Fun",
     
     "descripcion": "Body Manipulation"
-},
-{
-    "id": "155",
-    "nombre": "karma",
-  
-    "descripcion": "juez temporal"
 }
+
 ]
