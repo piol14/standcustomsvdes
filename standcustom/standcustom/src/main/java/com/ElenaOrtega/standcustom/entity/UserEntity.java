@@ -36,7 +36,7 @@ private String telefono;
 
     @NotNull
     @NotBlank
-    @Size(min = 6, max = 15)
+    @Size(min = 6, max = 30)
     @Pattern(regexp = "^[a-zA-Z0-9]+$", message = "el usuario debe ser alfanumérico")
     private String username;
 

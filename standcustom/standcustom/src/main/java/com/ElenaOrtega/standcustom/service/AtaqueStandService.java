@@ -40,4 +40,12 @@ public class AtaqueStandService {
     public void deleteAtaque(Long id) {
         ataqueStandRepository.deleteById(id);
     }
+    public void populateAtaques() {
+        // Crear instancias de AtaqueStandEntity y guardarlas
+        AtaqueStandEntity ataque1 = new AtaqueStandEntity("A", "A", "A", "A", "A", "A");
+        AtaqueStandEntity ataque2 = new AtaqueStandEntity("B", "B", "B", "B", "B", "B");
+        AtaqueStandEntity ataque3 = new AtaqueStandEntity("C", "C", "C", "C", "C", "C");
+
+        ataqueStandRepository.saveAll(List.of(ataque1, ataque2, ataque3));
+    }
 }

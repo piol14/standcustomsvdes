@@ -23,6 +23,7 @@ public class OpinionEntity {
 
     @ManyToOne
     @JoinColumn(name = "id_usuario")
+    @NotNull
     private UserEntity usuario;
 
   
@@ -32,9 +33,11 @@ public class OpinionEntity {
    
      @Min(value = 1, message = "El número de estrellas debe ser como mínimo 1.")
     @Max(value = 5, message = "El número de estrellas debe ser como máximo 5.")
+    @NotNull
     private int numero_estrellas;
 
     @ManyToOne
+    @NotNull
     @JoinColumn(name = "id_stand")
     private StandEntity stand;
 

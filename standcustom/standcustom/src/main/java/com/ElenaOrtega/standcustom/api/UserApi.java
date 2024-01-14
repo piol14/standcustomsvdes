@@ -61,7 +61,14 @@ public class UserApi {
             @RequestParam(name = "filter", required = false) String strFilter) {
         return ResponseEntity.ok(oUserService.getPage(oPageable, strFilter));
     }
-
+    @PostMapping("/populate/{amount}")
+    public ResponseEntity<Long> populate(@PathVariable("amount") Integer amount) {
+        return ResponseEntity.ok(oUserService.populate(amount));
+    }
+    @DeleteMapping("/empty")
+    public ResponseEntity<Long> empty() {
+        return ResponseEntity.ok(oUserService.empty());
+    }
 
 
    

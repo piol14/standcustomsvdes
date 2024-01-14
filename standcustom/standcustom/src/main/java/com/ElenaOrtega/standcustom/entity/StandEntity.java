@@ -22,24 +22,31 @@ public class StandEntity {
 
     
     @Size(max = 255)
+    @NotNull
     private String nombre;
 
    
     @Size(max = 1000)
     private String descripcion;
-
+    @ManyToOne
+    
+    @JoinColumn(name = "id_ataque_stand")
+    @NotNull
+    private AtaqueStandEntity ataque;
     
     // Constructor, getters y setters
+
+
+    public StandEntity(@Size(max = 255) String nombre, @Size(max = 1000) String descripcion, AtaqueStandEntity ataque) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.ataque = ataque;
+    }
 
     public StandEntity() {
     }
 
-    public StandEntity(String nombre, String descripcion, UserEntity usuario) {
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-       
-    }
-
+   
     // Getters y setters
 
     public Long getId() {
@@ -67,4 +74,11 @@ public class StandEntity {
     }
 
   
+    public AtaqueStandEntity getAtaque() {
+        return ataque;
+    }
+
+    public void setAtaque(AtaqueStandEntity ataque) {
+        this.ataque = ataque;
+    }
 }

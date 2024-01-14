@@ -48,7 +48,7 @@ public class StandApi {
     public ResponseEntity<Long> populate(@PathVariable("amount") Integer amount) {
         return ResponseEntity.ok(standService.populate(amount));
     }
-
+ 
     @DeleteMapping("/empty")
     public ResponseEntity<Long> empty() {
         return ResponseEntity.ok(standService.empty());

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ElenaOrtega.standcustom.exception.ResourceNotFoundException;
+import com.ElenaOrtega.standcustom.entity.PartidaEntity;
 import com.ElenaOrtega.standcustom.entity.UserEntity;
 import com.ElenaOrtega.standcustom.repository.UserRepository;
 
@@ -55,14 +56,9 @@ public class UserService {
         return oUserRepository.save(oUserEntity).getId();
     }
 
-    public UserEntity update(UserEntity oUserEntityToSet) {
-        UserEntity oUserEntityFromDatabase = this.get(oUserEntityToSet.getId());
-               
-            oUserEntityToSet.setRole(oUserEntityFromDatabase.getRole());
-            oUserEntityToSet.setPassword(foxforumPASSWORD);
-            return oUserRepository.save(oUserEntityToSet);
-                 
-       
+    public UserEntity update(UserEntity updatedUserEntity) {
+        UserEntity oUserEntityFromDatabase = this.get(updatedUserEntity.getId());
+        return oUserRepository.save(updatedUserEntity);
     }
 
     public Long delete(Long id) {
@@ -76,24 +72,29 @@ public class UserService {
         Pageable oPageable = PageRequest.of((int) (Math.random() * oUserRepository.count()), 1);
         return oUserRepository.findAll(oPageable).getContent().get(0);
     }
+
+public Long populate(Integer amount) {
+  
+    for (int i = 0; i < amount; i++) {
+        UserEntity usuario = new UserEntity();
+        usuario.setNombre("Cliente" + i);
+     usuario.setEmail("email"+i+"@gmail.com");
+        usuario.setTelefono("1234567" + i);
+        usuario.setRole(false);
+        usuario.setUsername("mitio"+i);
+        usuario.setPassword( "e2cac5c5f7e52ab03441bb70e89726ddbd1f6e5b683dde05fb65e0720290179e" );
+        oUserRepository.save(usuario);
+    }
+    return amount.longValue();
 }
-   // public Long populate(Integer amount) {
-    //for (int i = 0; i < amount; i++) {
-       
-      //  String name = "Name" + i;
-        //String surname = "Surname" + i;
-        //String lastname = "Lastname" + i;
+public Long empty() {
+  
+    oUserRepository.deleteAll();
+    oUserRepository.resetAutoIncrement();
+    oUserRepository.flush();
+    return oUserRepository.count();
+}
 
-        
-        //String email = (name.substring(0, 3) + surname.substring(0, 3) + lastname.substring(0, 2) + i).toLowerCase()
-                //+ "@ausiasmarch.net";
-
-        //String username = (name.substring(0, 3) + surname.substring(1, 3) + lastname.substring(1, 2) + i).toLowerCase();
-//
-        // Guardar la entidad de usuario en el repositorio
-  //      oUserRepository.save(new UserEntity(nombre, email, username, getTelefono
-    //            "e2cac5c5f7e52ab03441bb70e89726ddbd1f6e5b683dde05fb65e0720290179e", true));
-    //}
- //   return oUserRepository.count();
+}
 
 

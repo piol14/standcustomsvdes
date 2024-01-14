@@ -1,6 +1,7 @@
 package com.ElenaOrtega.standcustom.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "ataque_stand")
@@ -9,23 +10,23 @@ public class AtaqueStandEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+ @NotNull
     @Column(length = 1)
     private String velocidad;
-
-    @Column(length = 1, name = "potencialDesarollo")
+    
+    @Column(length = 1)
     private String potencialDesarollo;
   
-
+    @NotNull
     @Column(length = 1)
     private String alcance;
-
+    @NotNull
     @Column(length = 1)
     private String poder;
-
+    @NotNull
     @Column(length = 1)
     private String aguante;
-
+    @NotNull
     @Column(length = 1)
     private String acierto;
 
@@ -102,4 +103,3 @@ public class AtaqueStandEntity {
     }
 
 }
-
