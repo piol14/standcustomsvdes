@@ -43,4 +43,13 @@ public class OpinionApi {
             @RequestParam(name = "filter", required = false) String strFilter) {
         return ResponseEntity.ok(opinionService.getPage(pageable, strFilter));
     }
+
+      @PostMapping("/populate/{amount}")
+    public ResponseEntity<Long> populate(@PathVariable("amount") Integer amount) {
+        return ResponseEntity.ok(opinionService.populate(amount));
+    }
+     @DeleteMapping("/empty")
+    public ResponseEntity<Long> empty() {
+        return ResponseEntity.ok(opinionService.empty());
+    }
 }

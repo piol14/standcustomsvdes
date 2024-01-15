@@ -15,4 +15,6 @@ import com.ElenaOrtega.standcustom.entity.StandEntity;
 
 
 public interface StandRepository extends JpaRepository<StandEntity, Long> {
+    @Query(value = "ALTER TABLE stand AUTO_INCREMENT = 1", nativeQuery = true)
+    void resetAutoIncrement();
 }

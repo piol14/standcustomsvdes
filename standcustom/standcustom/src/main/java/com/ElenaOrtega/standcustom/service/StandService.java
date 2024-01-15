@@ -19,7 +19,7 @@ public class StandService {
     @Autowired
     private StandRepository standRepository;
     @Autowired
-    private AtaqueStandEntity ataqueRepository; 
+    private AtaqueStandRepository ataqueRepository; 
 
     public StandEntity get(Long id) {
         return standRepository.findById(id).orElse(null);
@@ -52,7 +52,7 @@ public class StandService {
         StandEntity stand = new StandEntity();
 
         // Crear un ataque stand ficticio
-        AtaqueStandEntity ataque = ataqueRepository.findById(3L).orElse(null);
+        AtaqueStandEntity ataque = ataqueRepository.findById(12L).orElse(null);
         // Otros datos del stand
         stand.setNombre("Nombre del Stand " + i);
         stand.setDescripcion("Descripción del Stand " + i);

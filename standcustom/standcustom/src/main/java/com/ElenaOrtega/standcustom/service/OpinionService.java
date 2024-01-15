@@ -43,7 +43,7 @@ public class OpinionService {
         // Implementa la lógica de paginación y filtrado según tus necesidades
         return opinionRepository.findAll(pageable);
     }
-    public Long populateOpinions(Integer amount) {
+    public Long populate(Integer amount) {
   
     for (int i = 0; i < amount; i++) {
         OpinionEntity opinion = new OpinionEntity();
@@ -71,4 +71,11 @@ public class OpinionService {
     }
     return amount.longValue();
 }
+  public Long empty() {
+       
+        opinionRepository.deleteAll();
+        opinionRepository.resetAutoIncrement();
+        opinionRepository.flush();
+        return opinionRepository.count();
+    }
 }

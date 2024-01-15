@@ -12,4 +12,6 @@ import com.ElenaOrtega.standcustom.entity.PartidaEntity;
 
 
 public interface PartidaRepository extends JpaRepository<PartidaEntity, Long> {
+     @Query(value = "ALTER TABLE partida AUTO_INCREMENT = 1", nativeQuery = true)
+    void resetAutoIncrement();
 }

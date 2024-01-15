@@ -40,12 +40,21 @@ public class AtaqueStandService {
     public void deleteAtaque(Long id) {
         ataqueStandRepository.deleteById(id);
     }
-    public void populateAtaques() {
-        // Crear instancias de AtaqueStandEntity y guardarlas
-        AtaqueStandEntity ataque1 = new AtaqueStandEntity("A", "A", "A", "A", "A", "A");
-        AtaqueStandEntity ataque2 = new AtaqueStandEntity("B", "B", "B", "B", "B", "B");
-        AtaqueStandEntity ataque3 = new AtaqueStandEntity("C", "C", "C", "C", "C", "C");
+     public Long populate(Integer amount) {
+        for (int i = 0; i < amount; i++) {
+            AtaqueStandEntity ataque = new AtaqueStandEntity(
+                "A" , "B" , "C" , "D", "E" , "A" 
+            );
+            ataqueStandRepository.save(ataque);
+        }
+        return amount.longValue();
+    }
 
-        ataqueStandRepository.saveAll(List.of(ataque1, ataque2, ataque3));
+     public Long empty() {
+        
+        long countBeforeDeletion = ataqueStandRepository.count();
+       ataqueStandRepository.deleteAll();
+        long countAfterDeletion = ataqueStandRepository.count();
+        return countBeforeDeletion - countAfterDeletion;
     }
 }

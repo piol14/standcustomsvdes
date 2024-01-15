@@ -15,6 +15,6 @@ import com.ElenaOrtega.standcustom.entity.UserEntity;
 
 
 public interface UserRepository extends JpaRepository<UserEntity, Long> {
-    @Query(value = "ALTER TABLE cliente AUTO_INCREMENT = 1", nativeQuery = true)
+    @Query(value = "ALTER TABLE usuario AUTO_INCREMENT = 1", nativeQuery = true)
     void resetAutoIncrement();
 }
