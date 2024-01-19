@@ -14,7 +14,7 @@ public class PartidaEntity {
   @NotNull
     private String fecha;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_usuario")
     private UserEntity ganador;
 

@@ -52,7 +52,7 @@ public class StandService {
         StandEntity stand = new StandEntity();
 
         // Crear un ataque stand ficticio
-        AtaqueStandEntity ataque = ataqueRepository.findById(12L).orElse(null);
+        AtaqueStandEntity ataque = ataqueRepository.findById(17L).orElse(null);
         // Otros datos del stand
         stand.setNombre("Nombre del Stand " + i);
         stand.setDescripcion("Descripción del Stand " + i);

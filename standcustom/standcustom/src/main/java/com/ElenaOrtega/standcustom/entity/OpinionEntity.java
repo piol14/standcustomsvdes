@@ -1,5 +1,6 @@
 package com.ElenaOrtega.standcustom.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -36,7 +37,7 @@ public class OpinionEntity {
     @NotNull
     private int numero_estrellas;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @NotNull
     @JoinColumn(name = "id_stand")
     private StandEntity stand;

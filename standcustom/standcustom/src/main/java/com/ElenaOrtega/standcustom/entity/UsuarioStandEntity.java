@@ -11,12 +11,12 @@ public class UsuarioStandEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @NotNull
     @JoinColumn(name = "id_usuario")
     private UserEntity usuario;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @NotNull
     @JoinColumn(name = "id_stand")
     private StandEntity stand;
