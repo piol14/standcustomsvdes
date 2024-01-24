@@ -49,7 +49,7 @@ public AtaqueStandEntity getOneRandom() {
      public Long populate(Integer amount) {
         for (int i = 0; i < amount; i++) {
             AtaqueStandEntity ataque = new AtaqueStandEntity(
-                "A" , "B" , "C" , "D", "E" , "A" 
+                "A"  , "C" , "D", "E" , "A" 
             );
             ataqueStandRepository.save(ataque);
         }
