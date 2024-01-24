@@ -43,4 +43,9 @@ public class UsuarioStandApi {
             @RequestParam(name = "filter", required = false) String strFilter) {
         return ResponseEntity.ok(usuarioStandService.getPage(pageable, strFilter));
     }
+
+    @PostMapping("/populate/{amount}")
+    public ResponseEntity<Long> populate(@PathVariable("amount") Integer amount) {
+        return ResponseEntity.ok(usuarioStandService.populate(amount));
+    }
 }

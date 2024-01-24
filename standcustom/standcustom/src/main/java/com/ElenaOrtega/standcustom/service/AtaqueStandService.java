@@ -3,6 +3,8 @@ package com.ElenaOrtega.standcustom.service;
 import com.ElenaOrtega.standcustom.entity.AtaqueStandEntity;
 import com.ElenaOrtega.standcustom.repository.AtaqueStandRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -32,7 +34,11 @@ public class AtaqueStandService {
         return ataqueStandEntity.getId();
     }
     
+public AtaqueStandEntity getOneRandom() {
 
+        Pageable oPageable = PageRequest.of((int) (Math.random() * ataqueStandRepository.count()), 1);
+        return ataqueStandRepository.findAll(oPageable).getContent().get(0);
+    }
     public AtaqueStandEntity updateAtaque(AtaqueStandEntity ataqueStandEntity) {
         return ataqueStandRepository.save(ataqueStandEntity);
     }

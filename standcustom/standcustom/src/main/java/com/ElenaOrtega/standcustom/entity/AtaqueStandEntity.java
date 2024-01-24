@@ -1,5 +1,8 @@
 package com.ElenaOrtega.standcustom.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
@@ -30,10 +33,17 @@ public class AtaqueStandEntity {
     @Column(length = 1)
     private String acierto;
 
-    // Constructores, getters y setters
-    public AtaqueStandEntity() {
 
+    @OneToMany( mappedBy = "ataque",fetch = jakarta.persistence.FetchType.LAZY)
+    private List <StandEntity> stand;
+    
+
+    public AtaqueStandEntity() {
+        stand = new ArrayList<StandEntity>();
+        
     }
+
+    // Constructores, getters y setters
 
     public AtaqueStandEntity(String velocidad, String potencialDesarollo, String alcance, String poder,
             String aguante, String acierto) {
@@ -44,6 +54,7 @@ public class AtaqueStandEntity {
         this.poder = poder;
         this.aguante = aguante;
         this.acierto = acierto;
+        
     }
 
     public Long getId() {
@@ -101,5 +112,10 @@ public class AtaqueStandEntity {
     public void setAcierto(String acierto) {
         this.acierto = acierto;
     }
+
+    public int  getStand() {
+        return stand.size();
+    }
+
 
 }

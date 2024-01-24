@@ -4,6 +4,7 @@ import java.time.format.DateTimeFormatter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +21,8 @@ public class StandService {
     private StandRepository standRepository;
     @Autowired
     private AtaqueStandRepository ataqueRepository; 
+     @Autowired
+    private AtaqueStandService ataqueStandService;
 
     public StandEntity get(Long id) {
         return standRepository.findById(id).orElse(null);
@@ -43,6 +46,11 @@ public class StandService {
         // Implementa la lógica de paginación y filtrado según tus necesidades
         return standRepository.findAll(pageable);
     }
+public StandEntity getOneRandom() {
+
+        Pageable oPageable = PageRequest.of((int) (Math.random() * standRepository.count()), 1);
+        return standRepository.findAll(oPageable).getContent().get(0);
+    }
 
  public Long populate(Integer amount) {
   
@@ -52,13 +60,13 @@ public class StandService {
         StandEntity stand = new StandEntity();
 
         // Crear un ataque stand ficticio
-        AtaqueStandEntity ataque = ataqueRepository.findById(17L).orElse(null);
+       
         // Otros datos del stand
         stand.setNombre("Nombre del Stand " + i);
         stand.setDescripcion("Descripción del Stand " + i);
         
         // Establecer la relación entre el stand y el ataque stand
-        stand.setAtaque(ataque);
+        stand.setAtaque(ataqueStandService.getOneRandom());
 
         // Guardar el stand en la base de datos
         standRepository.save(stand);

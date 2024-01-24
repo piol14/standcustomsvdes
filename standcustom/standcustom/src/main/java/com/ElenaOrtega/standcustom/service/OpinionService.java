@@ -21,6 +21,11 @@ public class OpinionService {
     private UserRepository oUserRepository;
     @Autowired
     private StandRepository standRepository;
+
+    @Autowired
+    private UserService userService;
+
+    @Autowired StandService standService; 
     public OpinionEntity get(Long id) {
         return opinionRepository.findById(id).orElse(null);
     }
@@ -43,28 +48,22 @@ public class OpinionService {
         // Implementa la lógica de paginación y filtrado según tus necesidades
         return opinionRepository.findAll(pageable);
     }
+
+
     public Long populate(Integer amount) {
   
     for (int i = 0; i < amount; i++) {
         OpinionEntity opinion = new OpinionEntity();
 
         // Asignar un usuario existente
-        UserEntity usuario = oUserRepository.findById(1L).orElse(null);
-        if (usuario == null) {
-            throw new IllegalArgumentException("No se encontró un usuario con ID 1");
-        }
-        opinion.setUsuario(usuario);
+       opinion.setUsuario(userService.getOneRandom());
 
         // Datos de la opinión
         opinion.setDescripcion("Opinión " + i);
         opinion.setNumero_estrellas((i % 5) + 1); // Asignar estrellas del 1 al 5
 
         // Asignar un stand existente
-        StandEntity stand = standRepository.findById(1L).orElse(null);
-        if (stand == null) {
-            throw new IllegalArgumentException("No se encontró un stand con ID 1");
-        }
-        opinion.setStand(stand);
+         opinion.setStand(standService.getOneRandom());
 
         // Guardar la opinión en la base de datos
         opinionRepository.save(opinion);

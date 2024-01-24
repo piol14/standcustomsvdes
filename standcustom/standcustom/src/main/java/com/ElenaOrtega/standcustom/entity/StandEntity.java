@@ -7,6 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -29,12 +30,14 @@ public class StandEntity {
    
     @Size(max = 1000)
     private String descripcion;
+   
     @ManyToOne(cascade = CascadeType.ALL)
     
     @JoinColumn(name = "id_ataque_stand")
     @NotNull
     private AtaqueStandEntity ataque;
-    
+
+  
     // Constructor, getters y setters
 
 
@@ -79,7 +82,7 @@ public class StandEntity {
         return ataque;
     }
 
-    public void setAtaque(AtaqueStandEntity ataque) {
-        this.ataque = ataque;
+    public void setAtaque(AtaqueStandEntity ataqueStandEntity) {
+        this.ataque = ataqueStandEntity;
     }
 }

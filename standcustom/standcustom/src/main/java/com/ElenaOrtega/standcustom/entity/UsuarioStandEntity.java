@@ -20,15 +20,25 @@ public class UsuarioStandEntity {
     @NotNull
     @JoinColumn(name = "id_stand")
     private StandEntity stand;
+ @ManyToOne(cascade = CascadeType.ALL)
+    @NotNull
+    @JoinColumn(name = "id_partida")
+    private PartidaEntity partida;
 
+    
     // Constructores, getters y setters
+
+
+
+ 
 
     public UsuarioStandEntity() {
     }
 
-    public UsuarioStandEntity(UserEntity usuario, StandEntity stand) {
+    public UsuarioStandEntity(UserEntity usuario, StandEntity stand, PartidaEntity partida) {
         this.usuario = usuario;
         this.stand = stand;
+         this.partida = partida;
     }
 
     // Getters y setters
@@ -56,4 +66,11 @@ public class UsuarioStandEntity {
     public void setStand(StandEntity stand) {
         this.stand = stand;
     }
+       public PartidaEntity getPartida() {
+    return partida;
+}
+
+public void setPartida(PartidaEntity partida) {
+    this.partida = partida;
+}
 }
