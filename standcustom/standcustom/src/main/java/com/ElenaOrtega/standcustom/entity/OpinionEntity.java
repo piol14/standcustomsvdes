@@ -37,7 +37,7 @@ public class OpinionEntity {
     @NotNull
     private int numero_estrellas;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @NotNull
     @JoinColumn(name = "id_stand")
     private StandEntity stand;

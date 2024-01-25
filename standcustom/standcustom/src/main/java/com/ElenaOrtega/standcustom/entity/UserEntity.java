@@ -1,6 +1,9 @@
 
 package com.ElenaOrtega.standcustom.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.*;
@@ -46,11 +49,18 @@ private String telefono;
     @Size(min = 64, max = 64)
     @Pattern(regexp = "^[a-fA-F0-9]+$", message = "la contraseña debe ser hexadecimal")
     private String password = "e2cac5c5f7e52ab03441bb70e89726ddbd1f6e5b683dde05fb65e0720290179e";
+@OneToMany(mappedBy = "ganador", fetch = jakarta.persistence.FetchType.LAZY, cascade = CascadeType.ALL)
+    private List <PartidaEntity> partidas_ganadas;
 
+@OneToMany(mappedBy = "usuario", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+private List<UsuarioStandEntity> detallePartida;
+    @OneToMany(mappedBy = "usuario", fetch = jakarta.persistence.FetchType.LAZY, cascade = CascadeType.ALL)
+    private List <OpinionEntity> opiniones;
     private Boolean role = false;
 
     public UserEntity() {
-       
+               partidas_ganadas = new ArrayList<PartidaEntity>();
+
     }
  
     public UserEntity(Long id, String nombre, String email, String username,
@@ -138,7 +148,13 @@ private String telefono;
     public void setRole(Boolean role) {
         this.role = role;
     }
-
-  
-
+public int getPartidas_ganadas() {
+    return partidas_ganadas.size();
+}
+   public int getOpiniones() {
+        return opiniones.size();
+    }
+ public  int getDetallePartida() {
+    return detallePartida.size();
+}
 }

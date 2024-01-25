@@ -11,16 +11,16 @@ public class UsuarioStandEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @NotNull
     @JoinColumn(name = "id_usuario")
     private UserEntity usuario;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @NotNull
     @JoinColumn(name = "id_stand")
     private StandEntity stand;
- @ManyToOne(cascade = CascadeType.ALL)
+ @ManyToOne
     @NotNull
     @JoinColumn(name = "id_partida")
     private PartidaEntity partida;

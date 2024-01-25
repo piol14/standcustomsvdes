@@ -31,7 +31,7 @@ public class StandEntity {
     @Size(max = 1000)
     private String descripcion;
    
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     
     @JoinColumn(name = "id_ataque_stand")
     @NotNull
