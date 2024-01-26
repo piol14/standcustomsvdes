@@ -1,5 +1,7 @@
 package com.ElenaOrtega.standcustom.entity;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
@@ -17,7 +19,11 @@ public class PartidaEntity {
     @ManyToOne
     @JoinColumn(name = "id_usuario")
     private UserEntity ganador;
+ 
 
+ @OneToMany(mappedBy = "partida", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+private List<UsuarioStandEntity> partidas;
+    
     // Constructores, getters y setters
 
     public PartidaEntity() {
