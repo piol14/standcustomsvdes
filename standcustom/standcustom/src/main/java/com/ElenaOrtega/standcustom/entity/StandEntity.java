@@ -1,6 +1,7 @@
 package com.ElenaOrtega.standcustom.entity;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -31,21 +32,56 @@ public class StandEntity {
     @Size(max = 1000)
     private String descripcion;
    
-    @ManyToOne
-    
-    @JoinColumn(name = "id_ataque_stand")
-    @NotNull
-    private AtaqueStandEntity ataque;
 
+    @NotNull
+    @Column(length = 1)
+    private String velocidad;
+     @NotNull
+    @Column(length = 1)
+    private String potencial_de_desarollo;
+   
+  
+    @NotNull
+    @Column(length = 1)
+    private String alcance;
+    @NotNull
+    @Column(length = 1)
+    private String poder;
+    @NotNull
+    @Column(length = 1)
+    private String aguante;
+    @NotNull
+    @Column(length = 1)
+    private String acierto;
+
+    
+    
+   
+    @ManyToOne
+    @JoinColumn(name = "id_usuario") // Cambia esto según la columna de la clave foránea en tu tabla usuario
+    private UserEntity usuario;
   
     // Constructor, getters y setters
 
 
-    public StandEntity(@Size(max = 255) String nombre, @Size(max = 1000) String descripcion, AtaqueStandEntity ataque) {
+   
+
+  
+
+    public StandEntity(Long id,   String nombre, String descripcion,
+            String velocidad, String potencial_de_desarollo, String alcance,
+             String poder, String aguante,  String acierto) {
+        this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.ataque = ataque;
+        this.velocidad = velocidad;
+        this.potencial_de_desarollo = potencial_de_desarollo;
+        this.alcance = alcance;
+        this.poder = poder;
+        this.aguante = aguante;
+        this.acierto = acierto;
     }
+
 
     public StandEntity() {
     }
@@ -78,11 +114,57 @@ public class StandEntity {
     }
 
   
-    public AtaqueStandEntity getAtaque() {
-        return ataque;
+  
+
+  
+
+     public UserEntity getUsuario() {
+        return usuario;
     }
 
-    public void setAtaque(AtaqueStandEntity ataqueStandEntity) {
-        this.ataque = ataqueStandEntity;
+    public void setUsuario(UserEntity usuario) {
+        this.usuario = usuario;
+    }
+
+     public String getVelocidad() {
+        return velocidad;
+    }
+
+    public void setVelocidad(String velocidad) {
+        this.velocidad = velocidad;
+    }
+
+    
+
+    public String getAlcance() {
+        return alcance;
+    }
+
+    public void setAlcance(String alcance) {
+        this.alcance = alcance;
+    }
+
+    public String getPoder() {
+        return poder;
+    }
+
+    public void setPoder(String poder) {
+        this.poder = poder;
+    }
+
+    public String getAguante() {
+        return aguante;
+    }
+
+    public void setAguante(String aguante) {
+        this.aguante = aguante;
+    }
+
+    public String getAcierto() {
+        return acierto;
+    }
+
+    public void setAcierto(String acierto) {
+        this.acierto = acierto;
     }
 }

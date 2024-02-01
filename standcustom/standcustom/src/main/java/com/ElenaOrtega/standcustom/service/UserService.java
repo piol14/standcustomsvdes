@@ -20,8 +20,9 @@ import jakarta.servlet.http.HttpServletRequest;
 @Service
 public class UserService {
 
-    private final String foxforumPASSWORD = "e2cac5c5f7e52ab03441bb70e89726ddbd1f6e5b683dde05fb65e0720290179e";
-
+    private final String standCustomPASSWORD= "e2cac5c5f7e52ab03441bb70e89726ddbd1f6e5b683dde05fb65e0720290179e";
+  @Autowired
+     private SessionService oSessionService;
     @Autowired
     UserRepository oUserRepository;
 
@@ -31,6 +32,7 @@ public class UserService {
  
 
     public UserEntity get(Long id) {
+        oSessionService.onlyAdminsOrUsers();
         return oUserRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("User not found"));
     }
 
@@ -38,7 +40,7 @@ public class UserService {
 
     public Page<UserEntity> getPage(Pageable pageable, String filter) {
       
-        
+       
         Page<UserEntity> page;
 
        
@@ -50,34 +52,46 @@ public class UserService {
   
 
     public Long create(UserEntity oUserEntity) {
-      
+      oSessionService.onlyAdmins();
         oUserEntity.setId(null);
-        oUserEntity.setPassword(foxforumPASSWORD);
+        oUserEntity.setPassword(standCustomPASSWORD);
         return oUserRepository.save(oUserEntity).getId();
     }
 
     public UserEntity update(UserEntity updatedUserEntity) {
-        UserEntity oUserEntityFromDatabase = this.get(updatedUserEntity.getId());
-        return oUserRepository.save(updatedUserEntity);
-    }
 
+
+         UserEntity oUserEntityFromDatabase = this.get(updatedUserEntity.getId());
+        oSessionService.onlyAdminsOrUsersWithIisOwnData(oUserEntityFromDatabase.getId());
+        if (oSessionService.isUser()) {
+            
+            updatedUserEntity.setRole(oUserEntityFromDatabase.getRole());
+            updatedUserEntity.setPassword(standCustomPASSWORD );
+            return oUserRepository.save(oUserEntityFromDatabase);
+        } else {
+            
+            updatedUserEntity.setPassword(standCustomPASSWORD );
+            return oUserRepository.save(oUserEntityFromDatabase);
+        }
+       
+    }
     public Long delete(Long id) {
-      
+        oSessionService.onlyAdmins();
         oUserRepository.deleteById(id);
         return id;
     }
    
     public UserEntity getOneRandom() {
-      
+      oSessionService.onlyAdmins();
         Pageable oPageable = PageRequest.of((int) (Math.random() * oUserRepository.count()), 1);
         return oUserRepository.findAll(oPageable).getContent().get(0);
     }
 
 public Long populate(Integer amount) {
-  
+  oSessionService.onlyAdmins();
     for (int i = 0; i < amount; i++) {
         UserEntity usuario = new UserEntity();
-        usuario.setNombre("Cliente" + i);
+        usuario.setNombre("" + i);
      usuario.setEmail("email"+i+"@gmail.com");
         usuario.setTelefono("1234567" + i);
         usuario.setRole(false);
@@ -88,13 +102,16 @@ public Long populate(Integer amount) {
     return amount.longValue();
 }
 public Long empty() {
-  
+  oSessionService.onlyAdmins();
     oUserRepository.deleteAll();
     oUserRepository.resetAutoIncrement();
     oUserRepository.flush();
     return oUserRepository.count();
 }
-
+   public UserEntity getByUsername(String username) {
+        return oUserRepository.findByUsername(username)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found by username"));
+    }
 }
 
 

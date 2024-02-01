@@ -21,40 +21,44 @@ public class PartidaService {
     @Autowired
     private PartidaRepository partidaRepository;
    
-
+    @Autowired
+    private SessionService oSessionService;
     @Autowired 
     private UserService userService;
     public PartidaEntity get(Long id) {
+       
         return partidaRepository.findById(id).orElse(null);
     }
 
     public Long create(PartidaEntity partidaEntity) {
+        oSessionService.onlyAdmins();
         partidaRepository.save(partidaEntity);
         return partidaEntity.getId();
     }
 
     public PartidaEntity update(PartidaEntity updatedPartidaEntity) {
-    
+    oSessionService.onlyAdmins();
         return partidaRepository.save(updatedPartidaEntity);
     }
 
     public Long delete(Long id) {
+        oSessionService.onlyAdmins();
         partidaRepository.deleteById(id);
         return id;
     }
 
     public Page<PartidaEntity> getPage(Pageable pageable, String strFilter) {
-        // Implementa la lógica de paginación y filtrado según tus necesidades
+        
         return partidaRepository.findAll(pageable);
     }
 
     public PartidaEntity getOneRandom() {
-
+oSessionService.onlyAdmins();
         Pageable oPageable = PageRequest.of((int) (Math.random() * partidaRepository.count()), 1);
         return partidaRepository.findAll(oPageable).getContent().get(0);
     }
      public Long populate(Integer amount) {
-  
+  oSessionService.onlyAdmins();
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
     for (int i = 0; i < amount; i++) {
@@ -73,7 +77,8 @@ public class PartidaService {
     return amount.longValue();
 }
 public Long empty() {
-       
+         oSessionService.onlyAdmins();
+
         partidaRepository.deleteAll();
         partidaRepository.resetAutoIncrement();
         partidaRepository.flush();

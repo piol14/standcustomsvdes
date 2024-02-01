@@ -53,13 +53,17 @@ private String telefono;
     private List <PartidaEntity> partidas_ganadas;
 
 @OneToMany(mappedBy = "usuario", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
-private List<UsuarioStandEntity> detallePartida;
+private List<DetallePartidaEntity> detallePartida;
     @OneToMany(mappedBy = "usuario", fetch = jakarta.persistence.FetchType.LAZY, cascade = CascadeType.ALL)
     private List <OpinionEntity> opiniones;
+    @OneToMany(mappedBy = "usuario", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+private List<StandEntity> stands;
     private Boolean role = false;
 
     public UserEntity() {
                partidas_ganadas = new ArrayList<PartidaEntity>();
+        opiniones = new ArrayList<OpinionEntity>();
+        stands = new ArrayList<StandEntity>();
 
     }
  
@@ -157,4 +161,9 @@ public int getPartidas_ganadas() {
  public  int getDetallePartida() {
     return detallePartida.size();
 }
+
+public int getStands(){
+    return stands.size();
+}
+
 }

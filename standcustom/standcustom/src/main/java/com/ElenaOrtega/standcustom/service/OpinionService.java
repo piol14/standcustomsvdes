@@ -21,7 +21,8 @@ public class OpinionService {
     private UserRepository oUserRepository;
     @Autowired
     private StandRepository standRepository;
-
+ @Autowired 
+ private SessionService oSessionService;
     @Autowired
     private UserService userService;
 
@@ -31,28 +32,34 @@ public class OpinionService {
     }
 
     public Long create(OpinionEntity opinionEntity) {
+        oSessionService.onlyAdminsOrUsers();
         opinionRepository.save(opinionEntity);
         return opinionEntity.getId();
     }
 
     public OpinionEntity update(OpinionEntity updatedOpinionEntity) {
+          OpinionEntity oOpinionEntityFromDatabase = this.get(updatedOpinionEntity.getId());
+    oSessionService.onlyAdminsOrUsersWithIisOwnData(oOpinionEntityFromDatabase.getUsuario().getId());
         return opinionRepository.save(updatedOpinionEntity);
     }
 
     public Long delete(Long id) {
+         OpinionEntity oOpinionEntityFromDatabase = this.get(id);
+        oSessionService.onlyAdminsOrUsersWithIisOwnData(oOpinionEntityFromDatabase.getUsuario().getId());
         opinionRepository.deleteById(id);
         return id;
     }
 
     public Page<OpinionEntity> getPage(Pageable pageable, String strFilter) {
-        // Implementa la lógica de paginación y filtrado según tus necesidades
+        
         return opinionRepository.findAll(pageable);
     }
 
 
     public Long populate(Integer amount) {
-  
+        oSessionService.onlyAdmins();
     for (int i = 0; i < amount; i++) {
+               
         OpinionEntity opinion = new OpinionEntity();
 
         // Asignar un usuario existente
@@ -71,7 +78,8 @@ public class OpinionService {
     return amount.longValue();
 }
   public Long empty() {
-       
+               oSessionService.onlyAdmins();
+
         opinionRepository.deleteAll();
         opinionRepository.resetAutoIncrement();
         opinionRepository.flush();

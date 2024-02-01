@@ -22,7 +22,7 @@ public class PartidaEntity {
  
 
  @OneToMany(mappedBy = "partida", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
-private List<UsuarioStandEntity> partidas;
+private List<DetallePartidaEntity> partidas;
     
     // Constructores, getters y setters
 
