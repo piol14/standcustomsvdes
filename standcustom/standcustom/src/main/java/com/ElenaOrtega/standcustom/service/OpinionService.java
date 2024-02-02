@@ -51,7 +51,7 @@ public class OpinionService {
     }
 
     public Page<OpinionEntity> getPage(Pageable pageable, String strFilter) {
-        
+         oSessionService.onlyAdmins();
         return opinionRepository.findAll(pageable);
     }
 
