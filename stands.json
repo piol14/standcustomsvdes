@@ -2,68 +2,144 @@
 [{
     "id": "1",
     "nombre": "The World",
-    
+   "imagen":"http://localhost:8083/media/theworld.png",
+   "poder": "A",
+    "velocidad": "A",
+        "alcance": "C",    
+        "aguante": "A",
+        "acierto": "B",
+        "desarollo":"B",
     "descripcion": "Time Stop, Super Speed, Super Strength"
 },
 {
     "id": "2",
     "nombre": "Hermit Purple",
-   
+    "imagen":"http://localhost:8083/media/hermitpurple.png",
+    "poder": "D",
+    "velocidad": "C",
+        "alcance": "D",
+        
+        "aguante": "A",
+        "acierto": "D",
+        "desarollo":"E",
     "descripcion": "Transmit Messages, Grappling, Creating imagens"
 },
 {
     "id": "3",
     "nombre": "Star Platinum",
-  
+    "imagen":"http://localhost:8083/media/starplatinum.png",
+    "poder": "A",
+    "velocidad": "A",
+        "alcance": "C",
+        
+        "aguante": "A",
+        "acierto": "A",
+        "desarollo":"A",
     "descripcion": "Time Stop, Super Speed, Super Strength, Breath, Star-Finger"
 },
 {
     "id": "4",
     "nombre": "Magician's Red",
-    
+    "imagen":"http://localhost:8083/media/magicianred.png",
+    "poder": "B",
+    "velocidad": "B",
+        "alcance": "C",
+        
+        "aguante": "B",
+        "acierto": "C",
+        "desarollo":"D",
     "descripcion": "Pyrokinesis, Super Strength, Super Speed, Cross Fire Hurricane, Red Bind, Life Detector"
 },
 
     {
     "id": "5",
     "nombre": "Hierophant Green",
-    
+    "imagen":"http://localhost:8083/media/hierophantgreen.png",
+    "poder": "C",
+    "velocidad": "B",
+        "alcance": "A",
+        
+        "aguante": "B",
+        "acierto": "C",
+        "desarollo":"D",
     "descripcion": "Coiled Body, Marionette Controll, Emerald Splash"
 },
 {
     "id": "6",
     "nombre": "Silver Chariot",
-   
+    "imagen":"http://localhost:8083/media/silverchariot.png",
+    "poder": "C",
+    "velocidad": "A",
+        "alcance": "C",
+        
+        "aguante": "B",
+        "acierto": "B",
+        "desarollo":"C",
     "descripcion": "Speed, Power, Precision, Armor, Sword Shot"
 }
    , {
     "id": "7",
     "nombre": "The Fool",
-    
+    "imagen":"http://localhost:8083/media/thefool.png",
+    "poder": "B",
+    "velocidad": "C",
+        "alcance": "D",
+        
+        "aguante": "C",
+        "acierto": "D",
+        "desarollo":"C",
     "descripcion": "Sand Manifestation, Shapeshifting"
 },
 {
     "id": "8",
     "nombre": "Justice",
-   
+    "imagen":"http://localhost:8083/media/justice.png",
+    "poder": "D",
+    "velocidad": "E",
+        "alcance": "A",
+        
+        "aguante": "A",
+        "acierto": "E",
+        "desarollo":"E",
     "descripcion": "Fog String Puppetry, Illusions"
 },
 {
     "id": "9",
     "nombre": "Cream",
-  
+    "imagen":"http://localhost:8083/media/cream.png",
+    "poder": "B",
+    "velocidad": "B",
+        "alcance": "D",
+        
+        "aguante": "C",
+        "acierto": "C",
+        "desarollo":"D",
     "descripcion": "Void"
 },
 {
     "id": "10",
     "nombre": "Emperor",
-   
+    "imagen":"http://localhost:8083/media/emperor.png",
+    "poder": "B",
+    "velocidad": "B",
+        "alcance": "B",
+        
+        "aguante": "C",
+        "acierto": "E",
+        "desarollo":"E",
     "descripcion": "Homing Bullets"
 },
 {
     "id": "11",
     "nombre": "Hanged Man",
-   
+    "imagen":"http://localhost:8083/media/hangedman.png",
+    "poder": "C",
+    "velocidad": "A",
+        "alcance": "A",
+        
+        "aguante": "B",
+        "acierto": "D",
+        "desarollo":"D",
     "descripcion": "Light Manifestation (reflections), wrist knives"
 },
 {

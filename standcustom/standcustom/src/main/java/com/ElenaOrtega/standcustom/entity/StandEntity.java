@@ -42,7 +42,7 @@ public class StandEntity {
     private String velocidad;
      
     @Column(length = 1)
-    private String potencial_de_desarollo;
+    private String desarollo;
    
   
     @NotNull
@@ -73,13 +73,13 @@ public class StandEntity {
   
 
     public StandEntity(Long id,   String nombre, String descripcion,
-            String velocidad, String potencial_de_desarollo, String alcance,
+            String velocidad, String desarollo, String alcance,
              String poder, String aguante,  String acierto, String imagen) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.velocidad = velocidad;
-        this.potencial_de_desarollo = potencial_de_desarollo;
+        this.desarollo = desarollo;
         this.alcance = alcance;
         this.poder = poder;
         this.aguante = aguante;
