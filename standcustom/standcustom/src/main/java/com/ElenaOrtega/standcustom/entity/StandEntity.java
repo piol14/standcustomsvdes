@@ -27,8 +27,12 @@ public class StandEntity {
     @Size(max = 255)
     @NotNull
     private String nombre;
-
+ 
+  
+    @NotNull
+    private String imagen;
    
+
     @Size(max = 1000)
     private String descripcion;
    
@@ -36,7 +40,7 @@ public class StandEntity {
     @NotNull
     @Column(length = 1)
     private String velocidad;
-     @NotNull
+     
     @Column(length = 1)
     private String potencial_de_desarollo;
    
@@ -70,7 +74,7 @@ public class StandEntity {
 
     public StandEntity(Long id,   String nombre, String descripcion,
             String velocidad, String potencial_de_desarollo, String alcance,
-             String poder, String aguante,  String acierto) {
+             String poder, String aguante,  String acierto, String imagen) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -80,6 +84,7 @@ public class StandEntity {
         this.poder = poder;
         this.aguante = aguante;
         this.acierto = acierto;
+        this.imagen = imagen;
     }
 
 
@@ -166,5 +171,13 @@ public class StandEntity {
 
     public void setAcierto(String acierto) {
         this.acierto = acierto;
+    }
+    public String getImagen() {
+        return imagen;
+    }
+
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
 }
