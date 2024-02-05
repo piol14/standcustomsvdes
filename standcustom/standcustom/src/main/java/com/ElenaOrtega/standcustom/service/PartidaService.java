@@ -1,5 +1,6 @@
 package com.ElenaOrtega.standcustom.service;
 
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,7 +70,7 @@ oSessionService.onlyAdmins();
         // Otros datos del stand
        
         // Establecer la relación entre el stand y el ataque stand
-       partida.setFecha("12-12-2024");;
+       partida.setFecha(LocalDateTime.now());
        
         // Guardar el stand en la base de datos
        partidaRepository.save(partida);

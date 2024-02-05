@@ -1,5 +1,7 @@
 package com.ElenaOrtega.standcustom.api;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -48,10 +50,12 @@ public class StandApi {
     public ResponseEntity<Long> populate(@PathVariable("amount") Integer amount) {
         return ResponseEntity.ok(standService.populate(amount));
     }
-     @PostMapping("/cargarJson")
-public Long populateStandsFromJson(@RequestParam String jsonFilePath) {
-    return standService.populateStandsFromJson(jsonFilePath);
-}
+    @PostMapping("/cargarJson")
+    public Long populateStandsFromJson(@RequestBody Map<String, String> requestBody) {
+        String jsonFilePath = requestBody.get("jsonFilePath");
+        return standService.populateStandsFromJson(jsonFilePath);
+    }
+    
 
  
     @DeleteMapping("/empty")

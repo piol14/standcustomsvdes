@@ -1,6 +1,11 @@
 package com.ElenaOrtega.standcustom.entity;
 
+import java.time.LocalDateTime;
 import java.util.List;
+
+import org.hibernate.event.spi.LockEventListener;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -13,8 +18,8 @@ public class PartidaEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-  @NotNull
-    private String fecha;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private LocalDateTime fecha;
 
     @ManyToOne
     @JoinColumn(name = "id_usuario")
@@ -29,7 +34,7 @@ private List<DetallePartidaEntity> partidas;
     public PartidaEntity() {
     }
 
-    public PartidaEntity(String fecha, UserEntity ganador) {
+    public PartidaEntity(LocalDateTime fecha, UserEntity ganador) {
         this.fecha = fecha;
         this.ganador = ganador;
     }
@@ -44,11 +49,11 @@ private List<DetallePartidaEntity> partidas;
         this.id = id;
     }
 
-    public String getFecha() {
+    public LocalDateTime getFecha() {
         return fecha;
     }
 
-    public void setFecha(String fecha) {
+    public void setFecha(LocalDateTime fecha) {
         this.fecha = fecha;
     }
 

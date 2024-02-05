@@ -11,13 +11,12 @@ import java.io.IOException;
 
 import org.springframework.stereotype.Service;
 
-// ... (otras importaciones)
 @Service
 public class StandPopulator {
 SessionService oSessionService;
     StandRepository standRepository;
     UserService userService;
-    // ... (otras declaraciones de la clase)
+    
 
     public Long populateFromJson(String jsonFilePath) {
         
@@ -25,7 +24,8 @@ SessionService oSessionService;
 
         try {
             ObjectMapper objectMapper = new ObjectMapper();
-            JsonNode standsNode = objectMapper.readTree(new File("/json/stands.json"));
+            JsonNode standsNode = objectMapper.readTree(new File("C:/Users/Usuario/Documents/standcustomservidor-1-3/standcustom/standcustom/src/main/java/com/ElenaOrtega/json/stands.json"));
+
 
             for (JsonNode standNode : standsNode) {
                 StandEntity stand = new StandEntity();
@@ -41,9 +41,9 @@ SessionService oSessionService;
                 stand.setAcierto(standNode.path("acierto").asText());
                 stand.setAguante(standNode.path("aguante").asText());
 
-                // Establecer la relación entre el stand y el ataque stand (si es necesario)
                 
-                stand.setUsuario(userService.getOneRandom());
+                
+                //stand.setUsuario(userService.getOneRandom());
 
                 // Guardar el stand en la base de datos
                 standRepository.save(stand);
