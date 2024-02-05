@@ -48,6 +48,11 @@ public class StandApi {
     public ResponseEntity<Long> populate(@PathVariable("amount") Integer amount) {
         return ResponseEntity.ok(standService.populate(amount));
     }
+     @PostMapping("/cargarJson")
+public Long populateStandsFromJson(@RequestParam String jsonFilePath) {
+    return standService.populateStandsFromJson(jsonFilePath);
+}
+
  
     @DeleteMapping("/empty")
     public ResponseEntity<Long> empty() {

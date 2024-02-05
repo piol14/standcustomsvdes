@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 import com.ElenaOrtega.standcustom.entity.StandEntity;
 import com.ElenaOrtega.standcustom.entity.UserEntity;
-
+import com.ElenaOrtega.standcustom.helper.StandPopulator;
 import com.ElenaOrtega.standcustom.repository.StandRepository;
 
 @Service
@@ -20,7 +20,8 @@ public class StandService {
     private SessionService oSessionService;
     @Autowired
     private StandRepository standRepository;
-   
+     @Autowired
+    private StandPopulator standPopulator;
     
     @Autowired
     private UserService userService;
@@ -69,7 +70,13 @@ public StandEntity getOneRandom() {
         // Otros datos del stand
         stand.setNombre("Nombre del Stand " + i);
         stand.setDescripcion("Descripción del Stand " + i);
-        
+        stand.setImagen("http://localhost:8083/media/hermitpurple.png");
+        stand.setVelocidad("A");
+        stand.setAlcance("B");
+        stand.setPoder("A");
+        stand.setDesarollo("D");
+        stand.setAcierto("C");
+        stand.setAguante("B");
         // Establecer la relación entre el stand y el ataque stand
         
         stand.setUsuario(userService.getOneRandom());
@@ -78,7 +85,10 @@ public StandEntity getOneRandom() {
     }
     return amount.longValue();
 }
-
+ public Long populateStandsFromJson(String jsonFilePath) {
+        // Agregar lógica adicional si es necesario antes o después de poblar desde el JSON
+        return standPopulator.populateFromJson(jsonFilePath);
+    }
 
     public Long empty() {
          oSessionService.onlyAdmins();
@@ -87,4 +97,7 @@ public StandEntity getOneRandom() {
         long countAfterDeletion = standRepository.count();
         return countBeforeDeletion - countAfterDeletion;
     }
+
+
+
 }

@@ -91,7 +91,7 @@ public Long populate(Integer amount) {
   oSessionService.onlyAdmins();
     for (int i = 0; i < amount; i++) {
         UserEntity usuario = new UserEntity();
-        usuario.setNombre("" + i);
+        usuario.setNombre("usuario" + i);
      usuario.setEmail("email"+i+"@gmail.com");
         usuario.setTelefono("1234567" + i);
         usuario.setRole(false);

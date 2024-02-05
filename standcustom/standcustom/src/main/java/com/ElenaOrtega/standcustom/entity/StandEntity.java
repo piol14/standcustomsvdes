@@ -45,6 +45,9 @@ public class StandEntity {
     private String desarollo;
    
   
+ 
+
+
     @NotNull
     @Column(length = 1)
     private String alcance;
@@ -138,7 +141,14 @@ public class StandEntity {
     public void setVelocidad(String velocidad) {
         this.velocidad = velocidad;
     }
+   public String getDesarollo() {
+        return desarollo;
+    }
 
+
+    public void setDesarollo(String desarollo) {
+        this.desarollo = desarollo;
+    }
     
 
     public String getAlcance() {
