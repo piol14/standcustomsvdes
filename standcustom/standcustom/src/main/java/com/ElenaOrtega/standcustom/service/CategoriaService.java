@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
@@ -53,12 +54,25 @@ private CategoriaRepository categoriaRepository;
       
         return categoriaRepository.findAll(pageable);
     }
-
+public CategoriaEntity getOneRandom() {
+oSessionService.onlyAdmins();
+        Pageable oPageable = PageRequest.of((int) (Math.random() * categoriaRepository.count()), 1);
+        return categoriaRepository.findAll(oPageable).getContent().get(0);
+    }
     //populate
    public Long populate(Integer amount) {
     oSessionService.onlyAdmins();
 
-    String[] nombresCategorias = {"OLA1", "OLA2", "OLA3", "OLA4", "OLA5", "OLA6", "OLA7", "OLA8", "OLA9"};
+    String[] nombresCategorias = {
+        "Phantom Blood",
+        "Battle Tendency",
+        "Stardust Crusaders",
+        "Diamond is Unbreakable",
+        "Vento Aureo",
+        "Stone Ocean",
+        "Steel Ball Run",
+        "Jojolion",
+        "Custom" };
 
     List<CategoriaEntity> categorias = new ArrayList<>();
 

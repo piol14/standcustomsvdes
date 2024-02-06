@@ -19,13 +19,13 @@ import com.ElenaOrtega.standcustom.entity.CategoriaEntity;
 import com.ElenaOrtega.standcustom.entity.CategoriaEntity;
 import com.ElenaOrtega.standcustom.service.CategoriaService;
 import com.ElenaOrtega.standcustom.service.DetallePartidaService;
-
-public class CategoriaApi {
     
 @CrossOrigin(origins = "*", allowedHeaders = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/categoria")
-public class DetallePartidaApi {
+public class CategoriaApi {
+
+
 
     @Autowired
   CategoriaService categoriaService;
@@ -61,5 +61,4 @@ public class DetallePartidaApi {
     public ResponseEntity<Long> populate(@PathVariable("amount") Integer amount) {
         return ResponseEntity.ok(categoriaService.populate(amount));
     }
-}
 }
