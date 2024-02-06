@@ -50,9 +50,14 @@ public class OpinionService {
         return id;
     }
 
-    public Page<OpinionEntity> getPage(Pageable pageable, String strFilter) {
-         oSessionService.onlyAdmins();
-        return opinionRepository.findAll(pageable);
+    public Page<OpinionEntity> getPage(Pageable pageable, Long userId) {
+        oSessionService.onlyAdmins();
+    
+        if (userId != null && userId != 0) {
+            return opinionRepository.findByUserId(userId, pageable);
+        } else {
+            return opinionRepository.findAll(pageable);
+        }
     }
 
 
