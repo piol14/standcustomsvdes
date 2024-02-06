@@ -22,14 +22,13 @@ public class CategoriaEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
- @OneToMany(mappedBy = "categoria", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
-    private List<StandEntity> stands;
+ 
     
 
     
     public CategoriaEntity()
     {
-        stands = new ArrayList<StandEntity>();
+        
     }
     // Constructor
     public CategoriaEntity(Long id, String nombre) {
@@ -54,10 +53,5 @@ public class CategoriaEntity {
         this.nombre = nombre;
     }
     
-    public List<StandEntity> getStands() {
-    return stands;
-}
-public void setStands(List<StandEntity> stands) {
-    this.stands = stands;
-}
+  
 }

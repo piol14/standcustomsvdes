@@ -78,7 +78,7 @@ public StandEntity getOneRandom() {
         stand.setDesarollo("D");
         stand.setAcierto("C");
         stand.setAguante("B");
-        stand.setCategoria(categoriaService.getOneRandom());
+       
         // Establecer la relación entre el stand y el ataque stand
         
         stand.setUsuario(userService.getOneRandom());
