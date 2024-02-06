@@ -68,16 +68,29 @@ public class StandEntity {
     @ManyToOne
     @JoinColumn(name = "id_usuario") // Cambia esto según la columna de la clave foránea en tu tabla usuario
     private UserEntity usuario;
+
   
     @ManyToOne
     
     @JoinColumn(name = "id_categoria") 
     private CategoriaEntity categoria;
 
+   
+
+
+   
+
     // Constructor, getters y setters
 
-    public StandEntity(Long id, String nombre, String descripcion, String velocidad, String desarollo,
-            String alcance, String poder, String aguante, String acierto, String imagen, CategoriaEntity categoria) {
+
+
+  
+
+
+    public StandEntity(Long id,   String nombre, String descripcion,
+            String velocidad, String desarollo, String alcance,
+             String poder, String aguante,  String acierto, String imagen) {
+
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -192,6 +205,7 @@ public class StandEntity {
         this.imagen = imagen;
     }
 
+
     public CategoriaEntity getCategoria() {
         return categoria;
     }
@@ -199,4 +213,5 @@ public class StandEntity {
     public void setCategoria(CategoriaEntity categoria) {
         this.categoria = categoria;
     }
+
 }

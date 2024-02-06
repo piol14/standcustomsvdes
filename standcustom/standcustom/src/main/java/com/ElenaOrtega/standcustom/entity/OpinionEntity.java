@@ -47,11 +47,11 @@ public class OpinionEntity {
     public OpinionEntity() {
     }
 
-    public OpinionEntity(UserEntity usuario, String descripcion, int numeroEstrellas, StandEntity stand) {
+    public OpinionEntity(UserEntity usuario, String descripcion, int numeroEstrellas) {
         this.usuario = usuario;
         this.descripcion = descripcion;
         this.numero_estrellas = numeroEstrellas;
-        this.stand = stand;
+        
     }
 
     // Getters y setters

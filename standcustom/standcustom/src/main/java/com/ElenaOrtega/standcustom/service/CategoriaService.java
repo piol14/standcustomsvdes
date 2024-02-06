@@ -10,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.ElenaOrtega.standcustom.entity.CategoriaEntity;
+import com.ElenaOrtega.standcustom.entity.PartidaEntity;
 import com.ElenaOrtega.standcustom.entity.CategoriaEntity;
 import com.ElenaOrtega.standcustom.repository.CategoriaRepository;
 import com.ElenaOrtega.standcustom.repository.DetallePartidaRepository;
@@ -54,25 +55,34 @@ private CategoriaRepository categoriaRepository;
       
         return categoriaRepository.findAll(pageable);
     }
-public CategoriaEntity getOneRandom() {
+
+
+
+    public CategoriaEntity getOneRandom() {
+
 oSessionService.onlyAdmins();
         Pageable oPageable = PageRequest.of((int) (Math.random() * categoriaRepository.count()), 1);
         return categoriaRepository.findAll(oPageable).getContent().get(0);
     }
+
     //populate
    public Long populate(Integer amount) {
     oSessionService.onlyAdmins();
 
-    String[] nombresCategorias = {
-        "Phantom Blood",
-        "Battle Tendency",
-        "Stardust Crusaders",
-        "Diamond is Unbreakable",
-        "Vento Aureo",
-        "Stone Ocean",
-        "Steel Ball Run",
-        "Jojolion",
-        "Custom" };
+
+
+
+String[] nombresCategorias = {
+    "Phantom Blood",
+    "Battle Tendency",
+    "Stardust Crusaders",
+    "Diamond is Unbreakable",
+    "Vento Aureo",
+    "Stone Ocean",
+    "Steel Ball Run",
+    "Jojolion",
+    "Custom" 
+};
 
     List<CategoriaEntity> categorias = new ArrayList<>();
 
@@ -88,7 +98,7 @@ oSessionService.onlyAdmins();
 }
 
 
-    //el empty
+   
     public Long empty() {
        oSessionService.onlyAdmins();
        categoriaRepository.deleteAll();
