@@ -12,6 +12,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Null;
 import jakarta.validation.constraints.Size;
 
 @Entity
@@ -67,12 +68,21 @@ public class StandEntity {
     @ManyToOne
     @JoinColumn(name = "id_usuario") // Cambia esto según la columna de la clave foránea en tu tabla usuario
     private UserEntity usuario;
-   
-
-
-   
 
   
+    @ManyToOne
+    
+    @JoinColumn(name = "id_categoria") 
+    private CategoriaEntity categoria;
+
+   
+
+
+   
+
+    // Constructor, getters y setters
+
+
 
   
 
@@ -80,6 +90,7 @@ public class StandEntity {
     public StandEntity(Long id,   String nombre, String descripcion,
             String velocidad, String desarollo, String alcance,
              String poder, String aguante,  String acierto, String imagen) {
+
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -90,6 +101,7 @@ public class StandEntity {
         this.aguante = aguante;
         this.acierto = acierto;
         this.imagen = imagen;
+        this.categoria = categoria;
     }
 
 
@@ -192,5 +204,14 @@ public class StandEntity {
     public void setImagen(String imagen) {
         this.imagen = imagen;
     }
-      
+
+
+    public CategoriaEntity getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(CategoriaEntity categoria) {
+        this.categoria = categoria;
+    }
+
 }

@@ -19,12 +19,10 @@ import com.ElenaOrtega.standcustom.entity.CategoriaEntity;
 
 import com.ElenaOrtega.standcustom.service.CategoriaService;
 
-
 @CrossOrigin(origins = "*", allowedHeaders = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/categoria")
 public class CategoriaApi {
-    
 
 
 

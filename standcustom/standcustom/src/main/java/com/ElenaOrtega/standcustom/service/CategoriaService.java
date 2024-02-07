@@ -56,7 +56,10 @@ private CategoriaRepository categoriaRepository;
         return categoriaRepository.findAll(pageable);
     }
 
+
+
     public CategoriaEntity getOneRandom() {
+
 oSessionService.onlyAdmins();
         Pageable oPageable = PageRequest.of((int) (Math.random() * categoriaRepository.count()), 1);
         return categoriaRepository.findAll(oPageable).getContent().get(0);
@@ -65,6 +68,9 @@ oSessionService.onlyAdmins();
     //populate
    public Long populate(Integer amount) {
     oSessionService.onlyAdmins();
+
+
+
 
 String[] nombresCategorias = {
     "Phantom Blood",
@@ -77,6 +83,7 @@ String[] nombresCategorias = {
     "Jojolion",
     "Custom" 
 };
+
     List<CategoriaEntity> categorias = new ArrayList<>();
 
     for (int i = 0; i < amount && i < nombresCategorias.length; i++) {

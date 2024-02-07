@@ -39,11 +39,11 @@ public class OpinionApi {
 
     @GetMapping("")
     public ResponseEntity<Page<OpinionEntity>> getPage(
-            Pageable pageable,
-            @RequestParam(name = "filter", required = false) String strFilter) {
-        return ResponseEntity.ok(opinionService.getPage(pageable, strFilter));
-    }
-
+        Pageable oPageable,
+        @RequestParam(value = "usuario", defaultValue = "0", required = false) Long userId
+        ) {
+            return ResponseEntity.ok(opinionService.getPage(oPageable , userId));
+        }
       @PostMapping("/populate/{amount}")
     public ResponseEntity<Long> populate(@PathVariable("amount") Integer amount) {
         return ResponseEntity.ok(opinionService.populate(amount));
