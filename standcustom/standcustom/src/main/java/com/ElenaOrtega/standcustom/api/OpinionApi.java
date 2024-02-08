@@ -40,9 +40,10 @@ public class OpinionApi {
     @GetMapping("")
     public ResponseEntity<Page<OpinionEntity>> getPage(
         Pageable oPageable,
-        @RequestParam(value = "usuario", defaultValue = "0", required = false) Long userId
+        @RequestParam(value = "usuario", defaultValue = "0", required = false) Long userId,
+        @RequestParam(value = "stand", defaultValue = "0", required = false) Long standId
         ) {
-            return ResponseEntity.ok(opinionService.getPage(oPageable , userId));
+            return ResponseEntity.ok(opinionService.getPage(oPageable , userId, standId));
         }
       @PostMapping("/populate/{amount}")
     public ResponseEntity<Long> populate(@PathVariable("amount") Integer amount) {

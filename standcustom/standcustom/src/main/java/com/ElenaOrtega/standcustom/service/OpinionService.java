@@ -50,13 +50,17 @@ public class OpinionService {
         return id;
     }
 
-    public Page<OpinionEntity> getPage(Pageable pageable, Long userId) {
+    public Page<OpinionEntity> getPage(Pageable pageable, Long userId, Long standId) {
         oSessionService.onlyAdmins();
     
-        if (userId != null && userId != 0) {
-            return opinionRepository.findByUserId(userId, pageable);
+        if (userId == null || userId == 0) {
+            if (standId == null || standId == 0) {
+                return opinionRepository.findAll(pageable);
+            } else {
+                return opinionRepository.findByStandId(standId, pageable);
+            }
         } else {
-            return opinionRepository.findAll(pageable);
+            return opinionRepository.findByUserId(userId, pageable);
         }
     }
 
