@@ -30,13 +30,14 @@ public class CategoriaEntity {
     private Long id;
     private String nombre;
 
- 
+ @OneToMany(mappedBy = "categoria", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<StandEntity> stands = new ArrayList<StandEntity>();
     
 
     
     public CategoriaEntity()
     {
-        
+      
 
     }
 

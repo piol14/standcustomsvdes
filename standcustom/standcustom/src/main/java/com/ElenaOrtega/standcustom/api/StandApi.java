@@ -42,8 +42,9 @@ public class StandApi {
     @GetMapping("")
     public ResponseEntity<Page<StandEntity>> getPage(
             Pageable pageable,
-            @RequestParam(name = "filter", required = false) String strFilter) {
-        return ResponseEntity.ok(standService.getPage(pageable, strFilter));
+            @RequestParam(name = "filter", required = false) String strFilter)
+        {
+                         return ResponseEntity.ok(standService.getPage(pageable, strFilter));
     }
 
     @PostMapping("/populate/{amount}")
