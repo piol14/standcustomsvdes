@@ -14,5 +14,5 @@ public interface DetallePartidaRepository extends JpaRepository<DetallePartidaEn
     //hazme findbystand
     Page<DetallePartidaEntity> findByStandId(Long id, Pageable pageable);
     Page<DetallePartidaEntity> findByPartidaId(Long id , Pageable pageable);
-    Page<DetallePartidaEntity> findByUsuario (Long id , Pageable pageable);
+    Page<DetallePartidaEntity> findByUsuarioId (Long id , Pageable pageable);
 }

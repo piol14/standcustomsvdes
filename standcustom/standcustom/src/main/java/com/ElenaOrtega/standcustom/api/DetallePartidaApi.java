@@ -40,8 +40,11 @@ public class DetallePartidaApi {
     @GetMapping("")
     public ResponseEntity<Page<DetallePartidaEntity>> getPage(
             Pageable pageable,
+            @RequestParam(value = "usuario", defaultValue = "0", required = false) Long userId,
+            @RequestParam(value = "stand", defaultValue = "0", required = false) Long standId,
+            @RequestParam(value = "partida", defaultValue = "0", required = false) Long partidaId,
             @RequestParam(name = "filter", required = false) String strFilter) {
-        return ResponseEntity.ok(usuarioStandService.getPage(pageable, strFilter));
+        return ResponseEntity.ok(usuarioStandService.getPage(pageable, strFilter,userId, standId, partidaId));
     }
 
     @PostMapping("/populate/{amount}")

@@ -51,7 +51,10 @@ public class StandService {
         return id;
     }
 
-    public Page<StandEntity> getPage(Pageable pageable, String strFilter) {
+    public Page<StandEntity> getPage(Pageable pageable, Long usuario) {
+        if (usuario != null && usuario != 0) {
+            return standRepository.findByUsuarioId(usuario, pageable);
+        }
         return standRepository.findAll(pageable);
     }
 public StandEntity getOneRandom() {

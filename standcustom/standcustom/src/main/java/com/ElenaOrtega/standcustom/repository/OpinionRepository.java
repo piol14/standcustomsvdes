@@ -16,7 +16,7 @@ public interface OpinionRepository extends JpaRepository<OpinionEntity, Long> {
     @Query("SELECT o FROM OpinionEntity o WHERE o.usuario.id = :userId")
     Page<OpinionEntity> findByUserId(Long userId, Pageable pageable);
 
-    @Query("SELECT o FROM OpinionEntity o WHERE o.stand.id = :standId")
+  
     Page<OpinionEntity> findByStandId(Long standId, Pageable pageable);
     @Transactional
     @Modifying

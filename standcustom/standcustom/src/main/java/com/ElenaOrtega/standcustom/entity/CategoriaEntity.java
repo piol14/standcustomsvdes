@@ -31,12 +31,15 @@ public class CategoriaEntity {
     private String nombre;
 
  
-    
+    @OneToMany(mappedBy = "categoria", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+private List<StandEntity> stands;
 
     
+   
+
     public CategoriaEntity()
     {
-        
+        stands = new ArrayList<StandEntity>();
 
     }
 
@@ -62,5 +65,9 @@ public class CategoriaEntity {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+    public int getStands() {
+        return stands.size();
+    }
 
+    
 }

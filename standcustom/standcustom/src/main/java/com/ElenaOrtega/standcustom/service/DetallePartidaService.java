@@ -17,7 +17,7 @@ public class DetallePartidaService {
     private DetallePartidaRepository detallePartidaRepository;
     @Autowired
     private PartidaService partidaService;
- @Autowired
+    @Autowired
     private StandService standService;
     @Autowired  
     private UserService usuarioService;
@@ -27,52 +27,57 @@ public class DetallePartidaService {
         return detallePartidaRepository.findById(id).orElse(null);
     }
 
-    public Long create(DetallePartidaEntity usuarioStandEntity) {
-    oSessionService.onlyAdminsOrUsers();
-        detallePartidaRepository.save(usuarioStandEntity);
-        return usuarioStandEntity.getId();
+    public Long create(DetallePartidaEntity detallePartidaEntity) {
+        oSessionService.onlyAdminsOrUsers();
+        detallePartidaRepository.save(detallePartidaEntity);
+        return detallePartidaEntity.getId();
     }
 
     public DetallePartidaEntity update(DetallePartidaEntity updatedDetallePartidaEntity) {
-         DetallePartidaEntity oAlquilerEntityFromDatabase = this.get(updatedDetallePartidaEntity.getId());
-    oSessionService.onlyAdminsOrUsersWithIisOwnData(oAlquilerEntityFromDatabase.getUsuario().getId());
-       
-
-        
+        DetallePartidaEntity detallePartidaEntityFromDatabase = this.get(updatedDetallePartidaEntity.getId());
+        oSessionService.onlyAdminsOrUsersWithIisOwnData(detallePartidaEntityFromDatabase.getUsuario().getId());
         return detallePartidaRepository.save(updatedDetallePartidaEntity);
     }
 
     public Long delete(Long id) {
-
-        DetallePartidaEntity oDetallePartidaEntityFromDatabase = this.get(id);
-        oSessionService.onlyAdminsOrUsersWithIisOwnData(oDetallePartidaEntityFromDatabase.getUsuario().getId());
+        DetallePartidaEntity detallePartidaEntityFromDatabase = this.get(id);
+        oSessionService.onlyAdminsOrUsersWithIisOwnData(detallePartidaEntityFromDatabase.getUsuario().getId());
         detallePartidaRepository.deleteById(id);
         return id;
     }
 
-    public Page<DetallePartidaEntity> getPage(Pageable pageable, String strFilter) {
-      
-        return detallePartidaRepository.findAll(pageable);
+    public Page<DetallePartidaEntity> getPage(Pageable pageable, String strFilter, Long userId, Long standId, Long partidaId) {
+        if (userId == null || userId == 0) {
+            if (standId == null || standId == 0) {
+                if (partidaId == null || partidaId == 0) {
+                    return detallePartidaRepository.findAll(pageable);
+                } else {
+                    // Filtrar por partidaId si está presente
+                    return detallePartidaRepository.findByPartidaId(partidaId, pageable);
+                }
+            } else {
+                return detallePartidaRepository.findByStandId(standId, pageable);
+            }
+        } else {
+            return detallePartidaRepository.findByUsuarioId(userId, pageable);
+        }
     }
 
-    //populate
     public Long populate(Integer amount) {
-       oSessionService.onlyAdmins();
+        oSessionService.onlyAdmins();
         for (int i = 0; i < amount; i++) {
-            DetallePartidaEntity usuarioStand = new DetallePartidaEntity();
-            usuarioStand.setPartida(partidaService.getOneRandom());
-            usuarioStand.setStand(standService.getOneRandom());
-            usuarioStand.setUsuario(usuarioService.getOneRandom());
-            detallePartidaRepository.save(usuarioStand);
+            DetallePartidaEntity detallePartidaEntity = new DetallePartidaEntity();
+            detallePartidaEntity.setPartida(partidaService.getOneRandom());
+            detallePartidaEntity.setStand(standService.getOneRandom());
+            detallePartidaEntity.setUsuario(usuarioService.getOneRandom());
+            detallePartidaRepository.save(detallePartidaEntity);
         }
         return amount.longValue();
     }
 
-    //el empty
     public Long empty() {
-       oSessionService.onlyAdmins();
+        oSessionService.onlyAdmins();
         detallePartidaRepository.deleteAll();
         return 0L;
     }
 }
-
