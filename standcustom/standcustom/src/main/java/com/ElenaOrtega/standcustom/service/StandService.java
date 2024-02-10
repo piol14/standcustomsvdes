@@ -55,8 +55,13 @@ public class StandService {
         if (usuario != null && usuario != 0) {
             return standRepository.findByUsuarioId(usuario, pageable);
         }
+   public Page<StandEntity> getPage(Pageable pageable, String strFilter) {
+  
+    
         return standRepository.findAll(pageable);
-    }
+   
+}
+
 public StandEntity getOneRandom() {
     oSessionService.onlyAdmins();
         Pageable oPageable = PageRequest.of((int) (Math.random() * standRepository.count()), 1);

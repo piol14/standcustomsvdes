@@ -60,4 +60,8 @@ public class CategoriaApi {
     public ResponseEntity<Long> populate(@PathVariable("amount") Integer amount) {
         return ResponseEntity.ok(categoriaService.populate(amount));
     }
+    @DeleteMapping("/empty")
+    public ResponseEntity<Long> empty() {
+        return ResponseEntity.ok(categoriaService.empty());
+    }
 }

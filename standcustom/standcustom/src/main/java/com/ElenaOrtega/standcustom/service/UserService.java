@@ -38,16 +38,32 @@ public class UserService {
 
   
 
-    public Page<UserEntity> getPage(Pageable pageable, String filter) {
-      
-       
-        Page<UserEntity> page;
+ public Page<UserEntity> getPage(Pageable pageable, String filter) {
+    Page<UserEntity> page;
 
-       
+    // Verificar si el filtro está vacío o nulo
+    if (filter == null || filter.isEmpty() || filter.trim().isEmpty()) {
+        // Si el filtro está vacío o nulo
+
+        // Verificar si el usuario es un administrador
+        if (oSessionService.isAdmin()) {
+            // Si el usuario es un administrador, devolver todos los usuarios
             page = oUserRepository.findAll(pageable);
-     
-        return page;
+        } else {
+            // Si el usuario no es un administrador, devolver una página vacía
+            page = Page.empty();
+        }
+    } else {
+        // Si hay un filtro
+
+        // Buscar usuarios que coincidan con el filtro en el nombre, apellido y otros campos
+        page = oUserRepository.findByUserByNameOrSurnameOrLastnameContainingIgnoreCase(
+                filter, filter, filter, filter, pageable);
     }
+
+    // Devolver la página de usuarios
+    return page;
+}
 
   
 
