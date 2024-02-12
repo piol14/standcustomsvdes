@@ -19,7 +19,8 @@ import com.ElenaOrtega.standcustom.entity.UserEntity;
 public interface StandRepository extends JpaRepository<StandEntity, Long> {
 
     Page<StandEntity> findByUsuarioId(Long usuario, Pageable pageable);
-
+    Page<StandEntity> findByCategoriaId(Long categoria, Pageable pageable);
+    
    
     @Query(value = "ALTER TABLE stand AUTO_INCREMENT = 1", nativeQuery = true)
     void resetAutoIncrement();

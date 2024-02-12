@@ -51,13 +51,22 @@ public class StandService {
         return id;
     }
 
-    public Page<StandEntity> getPage(Pageable pageable, Long usuario) {
-        if (usuario != null && usuario != 0) {
-            return standRepository.findByUsuarioId(usuario, pageable);
+    public Page<StandEntity> getPage(Pageable pageable, Long usuario, Long categoria) {
+            if (usuario == null || usuario == 0) {
+                if (categoria == null || categoria == 0) {
+                    return standRepository.findAll(pageable);
+                }
+                else{
+                    return standRepository.findByCategoriaId(categoria, pageable);
+                    
+                }
+            }
+            else{
+                return standRepository.findByUsuarioId(usuario, pageable);
+            }
+            
         }
-        return standRepository.findAll(pageable);
-   
-}
+    
 
 public StandEntity getOneRandom() {
     oSessionService.onlyAdmins();
