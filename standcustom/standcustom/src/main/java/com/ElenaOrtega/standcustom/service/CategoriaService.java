@@ -51,9 +51,11 @@ private CategoriaRepository categoriaRepository;
         return id;
     }
 
-    public Page<CategoriaEntity> getPage(Pageable pageable, String strFilter) {
-      
-        return categoriaRepository.findAll(pageable);
+    public Page<CategoriaEntity> getPage(Pageable pageable) {
+       
+         return categoriaRepository.findAll(pageable);
+       
+       
     }
 
 

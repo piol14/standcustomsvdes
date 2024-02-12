@@ -51,9 +51,10 @@ public class CategoriaApi {
 
     @GetMapping("")
     public ResponseEntity<Page<CategoriaEntity>> getPage(
-            Pageable pageable,
-            @RequestParam(name = "filter", required = false) String strFilter) {
-        return ResponseEntity.ok(categoriaService.getPage(pageable, strFilter));
+            Pageable pageable
+           
+       ) {
+        return ResponseEntity.ok(categoriaService.getPage(pageable));
     }
 
     @PostMapping("/populate/{amount}")
