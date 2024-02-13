@@ -32,7 +32,7 @@ public class OpinionService {
     }
 
     public Long create(OpinionEntity opinionEntity) {
-        oSessionService.onlyAdminsOrUsers();
+        oSessionService.onlyAdminsOrUsersWithIisOwnData(oSessionService.getSessionUser().getId());
         opinionRepository.save(opinionEntity);
         return opinionEntity.getId();
     }
@@ -76,7 +76,7 @@ public class OpinionService {
 
         // Datos de la opinión
         opinion.setDescripcion("Opinión " + i);
-        opinion.setNumero_estrellas((i % 5) + 1); // Asignar estrellas del 1 al 5
+   
 
         // Asignar un stand existente
          opinion.setStand(standService.getOneRandom());

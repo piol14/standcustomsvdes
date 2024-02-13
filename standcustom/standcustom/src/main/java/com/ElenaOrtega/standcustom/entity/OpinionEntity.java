@@ -32,10 +32,6 @@ public class OpinionEntity {
     private String descripcion;
 
    
-     @Min(value = 1, message = "El número de estrellas debe ser como mínimo 1.")
-    @Max(value = 5, message = "El número de estrellas debe ser como máximo 5.")
-    @NotNull
-    private int numero_estrellas;
 
     @ManyToOne
     @NotNull
@@ -50,7 +46,7 @@ public class OpinionEntity {
     public OpinionEntity(UserEntity usuario, String descripcion, int numeroEstrellas) {
         this.usuario = usuario;
         this.descripcion = descripcion;
-        this.numero_estrellas = numeroEstrellas;
+    
         
     }
 
@@ -80,13 +76,7 @@ public class OpinionEntity {
         this.descripcion = descripcion;
     }
 
-    public int getNumero_estrellas() {
-        return numero_estrellas;
-    }
-
-    public void setNumero_estrellas(int numeroEstrellas) {
-        this.numero_estrellas = numeroEstrellas;
-    }
+  
 
     public StandEntity getStand() {
         return stand;
