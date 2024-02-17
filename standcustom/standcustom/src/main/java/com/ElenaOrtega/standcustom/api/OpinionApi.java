@@ -3,17 +3,19 @@ package com.ElenaOrtega.standcustom.api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import org.springframework.data.domain.Sort;
 import com.ElenaOrtega.standcustom.entity.OpinionEntity;
 import com.ElenaOrtega.standcustom.service.OpinionService;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/opinion")
-public class OpinionApi {
 
+public class OpinionApi {
+  private static final int PAGE_TAMANYO = 10;
     @Autowired
     OpinionService opinionService;
 
@@ -36,7 +38,17 @@ public class OpinionApi {
     public ResponseEntity<Long> delete(@PathVariable("id") Long id) {
         return ResponseEntity.ok(opinionService.delete(id));
     }
+ @GetMapping("/byusuario/{id}")
+    public ResponseEntity<Page<OpinionEntity>> getByUser(@PathVariable("id")  @PageableDefault(size = PAGE_TAMANYO, sort = {
+        "id" }, direction = Sort.Direction.ASC) Long id, Pageable oPageable) {
+        return ResponseEntity.ok(opinionService.getOpinionesByUser(id, oPageable));
+    }
 
+    @GetMapping("/bystand/{id}")
+    public ResponseEntity<Page<OpinionEntity>> getByProducto(@PathVariable("id")  @PageableDefault(size = PAGE_TAMANYO, sort = {
+            "id" }, direction = Sort.Direction.ASC) Long id, Pageable oPageable) {
+        return ResponseEntity.ok(opinionService.getOpinionesByStand(id, oPageable));
+    }
     @GetMapping("")
     public ResponseEntity<Page<OpinionEntity>> getPage(
         Pageable oPageable,

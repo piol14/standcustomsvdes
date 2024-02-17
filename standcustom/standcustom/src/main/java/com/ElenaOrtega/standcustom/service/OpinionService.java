@@ -63,7 +63,13 @@ public class OpinionService {
             return opinionRepository.findByUserId(userId, pageable);
         }
     }
+    public Page<OpinionEntity> getOpinionesByUser(Long id_usuario, Pageable oPageable) {
+        return opinionRepository.findByUserId(id_usuario, oPageable);
+    }
 
+    public Page<OpinionEntity> getOpinionesByStand(Long id_producto, Pageable oPageable) {
+        return opinionRepository.findByStandId(id_producto, oPageable);
+    }
 
     public Long populate(Integer amount) {
         oSessionService.onlyAdmins();
