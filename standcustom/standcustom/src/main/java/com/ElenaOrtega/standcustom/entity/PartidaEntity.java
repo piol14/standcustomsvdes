@@ -19,7 +19,7 @@ public class PartidaEntity {
     private Long id;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-    private LocalDateTime fecha;
+    private String fecha;
 
     @ManyToOne
     @JoinColumn(name = "id_usuario")
@@ -34,7 +34,7 @@ private List<DetallePartidaEntity> partidas;
     public PartidaEntity() {
     }
 
-    public PartidaEntity(LocalDateTime fecha, UserEntity ganador) {
+    public PartidaEntity(String fecha, UserEntity ganador) {
         this.fecha = fecha;
         this.ganador = ganador;
     }
@@ -49,11 +49,11 @@ private List<DetallePartidaEntity> partidas;
         this.id = id;
     }
 
-    public LocalDateTime getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(LocalDateTime fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 

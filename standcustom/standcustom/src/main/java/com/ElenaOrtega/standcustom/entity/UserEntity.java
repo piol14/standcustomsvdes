@@ -152,18 +152,18 @@ private List<StandEntity> stands;
     public void setRole(Boolean role) {
         this.role = role;
     }
-public int getPartidas_ganadas() {
-    return partidas_ganadas.size();
-}
-   public int getOpiniones() {
-        return opiniones.size();
-    }
- public  int getDetallePartida() {
-    return detallePartida.size();
-}
+// public int getPartidas_ganadas() {
+//     return partidas_ganadas.size();
+// }
+//    public int getOpiniones() {
+//         return opiniones.size();
+//     }
+//  public  int getDetallePartida() {
+//     return detallePartida.size();
+// }
 
-public int getStands(){
-    return stands.size();
-}
+// public int getStands(){
+//     return stands.size();
+// }
 
 }

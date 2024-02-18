@@ -60,8 +60,6 @@ oSessionService.onlyAdmins();
     }
      public Long populate(Integer amount) {
   oSessionService.onlyAdmins();
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-
     for (int i = 0; i < amount; i++) {
 
         PartidaEntity partida = new PartidaEntity();
@@ -70,7 +68,7 @@ oSessionService.onlyAdmins();
         // Otros datos del stand
        
         // Establecer la relación entre el stand y el ataque stand
-       partida.setFecha(LocalDateTime.now());
+       partida.setFecha("18-02-2024");
        
         // Guardar el stand en la base de datos
        partidaRepository.save(partida);
