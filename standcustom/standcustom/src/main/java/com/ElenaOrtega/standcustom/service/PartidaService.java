@@ -32,13 +32,13 @@ public class PartidaService {
     }
 
     public Long create(PartidaEntity partidaEntity) {
-        oSessionService.onlyAdmins();
+       
         partidaRepository.save(partidaEntity);
         return partidaEntity.getId();
     }
 
     public PartidaEntity update(PartidaEntity updatedPartidaEntity) {
-    oSessionService.onlyAdmins();
+        oSessionService.onlyAdminsOrUsersWithIisOwnData(oSessionService.getSessionUser().getId());
         return partidaRepository.save(updatedPartidaEntity);
     }
 

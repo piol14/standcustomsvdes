@@ -28,7 +28,7 @@ public class DetallePartidaService {
     }
 
     public Long create(DetallePartidaEntity detallePartidaEntity) {
-        oSessionService.onlyAdminsOrUsers();
+        oSessionService.onlyAdminsOrUsersWithIisOwnData(oSessionService.getSessionUser().getId());
         detallePartidaRepository.save(detallePartidaEntity);
         return detallePartidaEntity.getId();
     }

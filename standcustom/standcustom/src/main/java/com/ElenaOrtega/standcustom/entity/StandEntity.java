@@ -1,8 +1,12 @@
 package com.ElenaOrtega.standcustom.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -74,8 +78,10 @@ public class StandEntity {
     
     @JoinColumn(name = "id_categoria") 
     private CategoriaEntity categoria;
-
-   
+@OneToMany(mappedBy = "stand", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+private List<OpinionEntity> opiniones;
+@OneToMany(mappedBy = "stand", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+private List<DetallePartidaEntity> detallepartida;
 
 
    
@@ -106,6 +112,8 @@ public class StandEntity {
 
 
     public StandEntity() {
+        opiniones = new ArrayList<OpinionEntity>();
+        detallepartida = new ArrayList<DetallePartidaEntity>();
     }
 
    
