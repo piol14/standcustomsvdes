@@ -65,9 +65,9 @@ private List<StandEntity> stands;
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    // public int getStands() {
-    //     return stands.size();
-    // }
+     public int getStands() {
+    return stands.size();
+     }
 
     
 }

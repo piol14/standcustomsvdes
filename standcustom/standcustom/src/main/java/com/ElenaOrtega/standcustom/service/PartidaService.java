@@ -83,4 +83,15 @@ public Long empty() {
         partidaRepository.flush();
         return partidaRepository.count();
     }
+    public Long getLastCreatedId() {
+        // Obtener la última ID creada en la tabla de partidas
+        Pageable pageable = PageRequest.of(0, 1);
+        Page<PartidaEntity> lastPartidaPage = partidaRepository.findAll(pageable);
+        if (lastPartidaPage.hasContent()) {
+            PartidaEntity lastPartida = lastPartidaPage.getContent().get(0);
+            return lastPartida.getId();
+        } else {
+            return null; // Si no hay ninguna partida en la base de datos
+        }
+}
 }

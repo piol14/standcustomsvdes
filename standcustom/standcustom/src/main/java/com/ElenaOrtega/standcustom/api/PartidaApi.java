@@ -21,7 +21,10 @@ public class PartidaApi {
     public ResponseEntity<PartidaEntity> get(@PathVariable("id") Long id) {
         return ResponseEntity.ok(partidaService.get(id));
     }
-
+    @GetMapping("/last")
+    public Long getLastCreatedId() {
+        return partidaService.getLastCreatedId();
+    }
     @PostMapping("")
     public ResponseEntity<Long> create(@RequestBody PartidaEntity partidaEntity) {
         return ResponseEntity.ok(partidaService.create(partidaEntity));
