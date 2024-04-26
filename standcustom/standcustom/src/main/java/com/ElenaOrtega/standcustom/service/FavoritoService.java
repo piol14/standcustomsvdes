@@ -9,6 +9,7 @@ import org.springframework.data.domain.Pageable;
 
 
 import com.ElenaOrtega.standcustom.entity.FavoritoEntity;
+import com.ElenaOrtega.standcustom.entity.OpinionEntity;
 import com.ElenaOrtega.standcustom.repository.FavoritoRepository;
 
 @Service
@@ -31,6 +32,7 @@ public class FavoritoService {
 
     // Método para crear un nuevo favorito
     public Long create(FavoritoEntity favoritoEntity) {
+        sessionService.onlyAdminsOrUsersWithIisOwnData(favoritoEntity.getUsuario().getId());
         favoritoRepository.save(favoritoEntity);
         return favoritoEntity.getId();
     }
@@ -49,12 +51,27 @@ public class FavoritoService {
     }
 
     // Método para obtener una página de favoritos
-    public Page<FavoritoEntity> getPage(Pageable pageable) {
-        
-        return  favoritoRepository.findAll(pageable);
+    public Page<FavoritoEntity> getPage(Pageable pageable, Long userId, Long standId) {
+        sessionService.onlyAdmins();
+    
+        if (userId == null || userId == 0) {
+            if (standId == null || standId == 0) {
+                return  favoritoRepository.findAll(pageable);
+            } else {
+                return  favoritoRepository.findByStandId(standId, pageable);
+            }
+        } else {
+            return  favoritoRepository.findByUserId(userId, pageable);
+        }
     }
     
+ public Page<FavoritoEntity> getOpinionesByUser(Long id_usuario, Pageable oPageable) {
+        return favoritoRepository.findByUserId(id_usuario, oPageable);
+    }
 
+    public Page<FavoritoEntity> getOpinionesByStand(Long id_producto, Pageable oPageable) {
+        return favoritoRepository.findByStandId(id_producto, oPageable);
+    }
     // Método para obtener un favorito aleatorio
     public FavoritoEntity getOneRandom() {
         sessionService.onlyAdmins();

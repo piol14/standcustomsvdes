@@ -17,7 +17,13 @@ public interface FavoritoRepository extends JpaRepository<FavoritoEntity, Long> 
 
   
     
-   
-    @Query(value = "ALTER TABLE stand AUTO_INCREMENT = 1", nativeQuery = true)
+    @Query("SELECT o FROM FavoritoEntity o WHERE o.usuario.id = :userId")
+    Page<FavoritoEntity> findByUserId(Long userId, Pageable pageable);
+
+  
+    Page<FavoritoEntity> findByStandId(Long standId, Pageable pageable);
+    @Transactional
+    @Modifying
+    @Query(value = "ALTER TABLE favorito AUTO_INCREMENT = 1", nativeQuery = true)
     void resetAutoIncrement();
 }
