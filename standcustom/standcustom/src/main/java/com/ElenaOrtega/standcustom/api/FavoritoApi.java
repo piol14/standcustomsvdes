@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -48,13 +49,26 @@ public class FavoritoApi {
     public ResponseEntity<Long> delete(@PathVariable("id") Long id) {
         return ResponseEntity.ok(favoritoService.delete(id));
     }
+ @GetMapping("/byusuario/{id}")
+    public ResponseEntity<Page<FavoritoEntity>> getByUser(@PathVariable("id")  @PageableDefault(size = PAGE_TAMANYO, sort = {
+        "id" }, direction = Sort.Direction.ASC) Long id, Pageable oPageable) {
+        return ResponseEntity.ok(favoritoService.getOpinionesByUser(id, oPageable));
+    }
 
+    @GetMapping("/bystand/{id}")
+    public ResponseEntity<Page<FavoritoEntity>> getByStand(@PathVariable("id")  @PageableDefault(size = PAGE_TAMANYO, sort = {
+            "id" }, direction = Sort.Direction.ASC) Long id, Pageable oPageable) {
+        return ResponseEntity.ok(favoritoService.getOpinionesByStand(id, oPageable));
+    }
     @GetMapping("")
     public ResponseEntity<Page<FavoritoEntity>> getPage(
-        Pageable oPageable
+        
      
+        Pageable oPageable,
+        @RequestParam(value = "usuario", defaultValue = "0", required = false) Long userId,
+        @RequestParam(value = "stand", defaultValue = "0", required = false) Long standId
         ) {
-            return ResponseEntity.ok(favoritoService.getPage(oPageable ));
+            return ResponseEntity.ok(favoritoService.getPage(oPageable , userId, standId));
         }
       @PostMapping("/populate/{amount}")
     public ResponseEntity<Long> populate(@PathVariable("amount") Integer amount) {

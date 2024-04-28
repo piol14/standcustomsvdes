@@ -45,7 +45,7 @@ public class OpinionApi {
     }
 
     @GetMapping("/bystand/{id}")
-    public ResponseEntity<Page<OpinionEntity>> getByProducto(@PathVariable("id")  @PageableDefault(size = PAGE_TAMANYO, sort = {
+    public ResponseEntity<Page<OpinionEntity>> getByStand(@PathVariable("id")  @PageableDefault(size = PAGE_TAMANYO, sort = {
             "id" }, direction = Sort.Direction.ASC) Long id, Pageable oPageable) {
         return ResponseEntity.ok(opinionService.getOpinionesByStand(id, oPageable));
     }
