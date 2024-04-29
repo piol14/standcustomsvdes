@@ -1,5 +1,8 @@
 package com.ElenaOrtega.standcustom.service;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.data.domain.Page;
@@ -100,6 +103,20 @@ public class FavoritoService {
         favoritoRepository.resetAutoIncrement();
         return favoritoRepository.count();
     }
-
+    public boolean existeFavoritoRepetido(Long usuarioId, Long standId) {
+        Page<FavoritoEntity> favoritos = favoritoRepository.findByUsuarioIdAndStandId(usuarioId, standId, Pageable.unpaged());
+        return favoritos.getTotalElements() > 0;
+    }
+    
+    // Método para obtener el ID de un favorito repetido para un usuario y un stand
+    public Optional<Long> obtenerFavoritoRepetidoId(Long usuarioId, Long standId) {
+        Page<FavoritoEntity> favoritos = favoritoRepository.findByUsuarioIdAndStandId(usuarioId, standId, Pageable.unpaged());
+        if (favoritos.getTotalElements() > 0) {
+            FavoritoEntity favoritoRepetido = favoritos.getContent().get(0);
+            return Optional.of(favoritoRepetido.getId());
+        } else {
+            return Optional.empty();
+        }
+    }
   
 }

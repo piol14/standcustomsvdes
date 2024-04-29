@@ -22,6 +22,7 @@ public interface FavoritoRepository extends JpaRepository<FavoritoEntity, Long> 
 
   
     Page<FavoritoEntity> findByStandId(Long standId, Pageable pageable);
+    Page<FavoritoEntity> findByUsuarioIdAndStandId(Long usuarioId, Long standId, Pageable pageable);
     @Transactional
     @Modifying
     @Query(value = "ALTER TABLE favorito AUTO_INCREMENT = 1", nativeQuery = true)

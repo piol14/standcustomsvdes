@@ -1,5 +1,7 @@
 package com.ElenaOrtega.standcustom.api;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.data.domain.Page;
@@ -77,5 +79,15 @@ public class FavoritoApi {
      @DeleteMapping("/empty")
     public ResponseEntity<Long> empty() {
         return ResponseEntity.ok(favoritoService.empty());
+    }
+
+    @GetMapping("/repetido/{usuarioId}/{standId}")
+    public boolean existeFavoritoRepetido(@PathVariable Long usuarioId, @PathVariable Long standId) {
+        return favoritoService.existeFavoritoRepetido(usuarioId, standId);
+    }
+
+    @GetMapping("/repetido/{usuarioId}/{standId}/id")
+    public Optional<Long> obtenerFavoritoRepetidoId(@PathVariable Long usuarioId, @PathVariable Long standId) {
+        return favoritoService.obtenerFavoritoRepetidoId(usuarioId, standId);
     }
 }

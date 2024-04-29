@@ -58,13 +58,15 @@ private List<DetallePartidaEntity> detallePartida;
     private List <OpinionEntity> opiniones;
     @OneToMany(mappedBy = "usuario", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
 private List<StandEntity> stands;
+@OneToMany(mappedBy = "usuario", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+private List<FavoritoEntity> favoritos;
     private Boolean role = false;
 
     public UserEntity() {
                partidas_ganadas = new ArrayList<PartidaEntity>();
         opiniones = new ArrayList<OpinionEntity>();
         stands = new ArrayList<StandEntity>();
-
+        favoritos = new ArrayList<FavoritoEntity>();
     }
  
     public UserEntity(Long id, String nombre, String email, String username,
@@ -164,6 +166,9 @@ public int getPartidas_ganadas() {
 
  public int getStands(){
     return stands.size();
+ }
+ public int getFavoritos(){
+    return favoritos.size();
  }
 
 }
