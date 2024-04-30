@@ -51,7 +51,7 @@ public class FavoritoApi {
     public ResponseEntity<Long> delete(@PathVariable("id") Long id) {
         return ResponseEntity.ok(favoritoService.delete(id));
     }
- @GetMapping("/byusuario/{id}")
+    @GetMapping("/byusuario/{id}")
     public ResponseEntity<Page<FavoritoEntity>> getByUser(@PathVariable("id")  @PageableDefault(size = PAGE_TAMANYO, sort = {
         "id" }, direction = Sort.Direction.ASC) Long id, Pageable oPageable) {
         return ResponseEntity.ok(favoritoService.getOpinionesByUser(id, oPageable));
