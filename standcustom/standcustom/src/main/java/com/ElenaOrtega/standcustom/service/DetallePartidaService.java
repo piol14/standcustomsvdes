@@ -6,6 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.ElenaOrtega.standcustom.entity.DetallePartidaEntity;
+import com.ElenaOrtega.standcustom.entity.OpinionEntity;
 import com.ElenaOrtega.standcustom.repository.DetallePartidaRepository;
 
 @Service
@@ -62,7 +63,13 @@ public class DetallePartidaService {
             return detallePartidaRepository.findByUsuarioId(userId, pageable);
         }
     }
+ public Page<DetallePartidaEntity> getDetallePartidaByUser(Long id_usuario, Pageable oPageable) {
+        return detallePartidaRepository.findByUsuarioId(id_usuario, oPageable);
+    }
 
+    public Page<DetallePartidaEntity> getDetallePartidaByStand(Long id_producto, Pageable oPageable) {
+        return detallePartidaRepository.findByStandId(id_producto, oPageable);
+    }
     public Long populate(Integer amount) {
         oSessionService.onlyAdmins();
         for (int i = 0; i < amount; i++) {
