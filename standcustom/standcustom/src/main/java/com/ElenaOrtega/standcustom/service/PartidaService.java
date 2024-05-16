@@ -64,7 +64,7 @@ oSessionService.onlyAdmins();
 
         PartidaEntity partida = new PartidaEntity();
         // Crear un ataque stand ficticio
-        partida.setGanador(userService.getOneRandom());
+   
         // Otros datos del stand
        
         // Establecer la relación entre el stand y el ataque stand

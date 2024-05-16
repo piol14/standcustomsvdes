@@ -16,5 +16,5 @@ public interface PartidaRepository extends JpaRepository<PartidaEntity, Long> {
     @Modifying
     @Query(value = "ALTER TABLE partida AUTO_INCREMENT = 1", nativeQuery = true)
     void resetAutoIncrement();
-    Page<PartidaEntity> findByGanadorId(Long usuario, Pageable pageable); 
+
 }

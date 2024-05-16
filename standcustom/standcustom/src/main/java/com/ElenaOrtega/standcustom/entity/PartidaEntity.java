@@ -21,9 +21,6 @@ public class PartidaEntity {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private String fecha;
 
-    @ManyToOne
-    @JoinColumn(name = "id_usuario")
-    private UserEntity ganador;
  
 
  @OneToMany(mappedBy = "partida", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
@@ -36,7 +33,7 @@ private List<DetallePartidaEntity> partidas;
 
     public PartidaEntity(String fecha, UserEntity ganador) {
         this.fecha = fecha;
-        this.ganador = ganador;
+    
     }
 
     // Getters y setters
@@ -57,11 +54,4 @@ private List<DetallePartidaEntity> partidas;
         this.fecha = fecha;
     }
 
-    public UserEntity getGanador() {
-        return ganador;
-    }
-
-    public void setGanador(UserEntity ganador) {
-        this.ganador = ganador;
-    }
 }

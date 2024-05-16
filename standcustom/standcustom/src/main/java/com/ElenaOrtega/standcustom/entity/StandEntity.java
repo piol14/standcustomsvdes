@@ -82,7 +82,8 @@ public class StandEntity {
 private List<OpinionEntity> opiniones;
 @OneToMany(mappedBy = "stand", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
 private List<DetallePartidaEntity> detallepartida;
-
+@OneToMany(mappedBy = "stand", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+private List<FavoritoEntity> favoritos;
 
    
 
@@ -114,6 +115,7 @@ private List<DetallePartidaEntity> detallepartida;
     public StandEntity() {
         opiniones = new ArrayList<OpinionEntity>();
         detallepartida = new ArrayList<DetallePartidaEntity>();
+        favoritos = new ArrayList<FavoritoEntity>();
     }
 
    

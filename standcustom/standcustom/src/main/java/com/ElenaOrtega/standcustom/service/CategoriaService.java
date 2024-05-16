@@ -50,7 +50,10 @@ private CategoriaRepository categoriaRepository;
         categoriaRepository.deleteById(id);
         return id;
     }
-
+    public CategoriaEntity findByNombre(String nombre) {
+        return categoriaRepository.findByNombre(nombre);
+    }
+    
     public Page<CategoriaEntity> getPage(Pageable pageable) {
        
          return categoriaRepository.findAll(pageable);

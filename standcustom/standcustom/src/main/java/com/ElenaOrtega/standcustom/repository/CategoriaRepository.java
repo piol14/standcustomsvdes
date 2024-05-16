@@ -17,4 +17,5 @@ public interface CategoriaRepository extends JpaRepository<CategoriaEntity, Long
      
      @Query(value = "ALTER TABLE categoria AUTO_INCREMENT = 1", nativeQuery = true)
     void resetAutoIncrement();
+    CategoriaEntity findByNombre(String nombre);
 }

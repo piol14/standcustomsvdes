@@ -49,8 +49,14 @@ private String telefono;
     @Size(min = 64, max = 64)
     @Pattern(regexp = "^[a-fA-F0-9]+$", message = "la contraseña debe ser hexadecimal")
     private String password = "e2cac5c5f7e52ab03441bb70e89726ddbd1f6e5b683dde05fb65e0720290179e";
-@OneToMany(mappedBy = "ganador", fetch = jakarta.persistence.FetchType.LAZY, cascade = CascadeType.ALL)
-    private List <PartidaEntity> partidas_ganadas;
+    private String tokenPassword;
+
+    private Boolean active = true;
+
+    private boolean verified;
+
+    private String token;
+
 
 @OneToMany(mappedBy = "usuario", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
 private List<DetallePartidaEntity> detallePartida;
@@ -63,14 +69,14 @@ private List<FavoritoEntity> favoritos;
     private Boolean role = false;
 
     public UserEntity() {
-               partidas_ganadas = new ArrayList<PartidaEntity>();
+              
         opiniones = new ArrayList<OpinionEntity>();
         stands = new ArrayList<StandEntity>();
         favoritos = new ArrayList<FavoritoEntity>();
     }
  
     public UserEntity(Long id, String nombre, String email, String username,
-            String password, Boolean role, String telefono) {
+            String password, Boolean role, String telefono, Boolean active, boolean verified, String token) {
         this.id = id;
         this.nombre = nombre;
         this.telefono= telefono;
@@ -79,6 +85,10 @@ private List<FavoritoEntity> favoritos;
         this.username = username;
         this.password = password;
         this.role = role;
+        this.active = active;
+        this.verified = verified;
+        this.token = token;
+
     }
 
     public UserEntity(String nombre, String email, String username, String password,
@@ -154,9 +164,7 @@ private List<FavoritoEntity> favoritos;
     public void setRole(Boolean role) {
         this.role = role;
     }
-public int getPartidas_ganadas() {
-    return partidas_ganadas.size();
-}
+
    public int getOpiniones() {
         return opiniones.size();
     }
@@ -171,4 +179,52 @@ public int getPartidas_ganadas() {
     return favoritos.size();
  }
 
+
+public void setOpiniones(List<OpinionEntity> opiniones) {
+    this.opiniones = opiniones;
+}
+
+
+
+public void setStands(List<StandEntity> stands) {
+    this.stands = stands;
+}
+
+
+
+public void setFavoritos(List<FavoritoEntity> favoritos) {
+    this.favoritos = favoritos;
+}
+
+public String getTokenPassword() {
+    return tokenPassword;
+}
+
+public void setTokenPassword(String tokenPassword) {
+    this.tokenPassword = tokenPassword;
+}
+
+public Boolean getActive() {
+    return active;
+}
+
+public void setActive(Boolean active) {
+    this.active = active;
+}
+
+public boolean isVerified() {
+    return verified;
+}
+
+public void setVerified(boolean verified) {
+    this.verified = verified;
+}
+
+public String getToken() {
+    return token;
+}
+
+public void setToken(String token) {
+    this.token = token;
+}
 }

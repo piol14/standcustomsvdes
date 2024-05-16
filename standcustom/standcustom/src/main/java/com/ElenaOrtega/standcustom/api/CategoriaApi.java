@@ -43,6 +43,16 @@ public class CategoriaApi {
     public ResponseEntity<CategoriaEntity> update(@RequestBody CategoriaEntity categoriaEntity) {
         return ResponseEntity.ok(categoriaService.update(categoriaEntity));
     }
+    @GetMapping("/nombre/{nombre}")
+    public ResponseEntity<CategoriaEntity> getByNombre(@PathVariable("nombre") String nombre) {
+        CategoriaEntity categoria = categoriaService.findByNombre(nombre);
+        if (categoria != null) {
+            return ResponseEntity.ok(categoria);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Long> delete(@PathVariable("id") Long id) {
