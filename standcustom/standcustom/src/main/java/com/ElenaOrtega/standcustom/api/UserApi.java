@@ -2,6 +2,8 @@ package com.ElenaOrtega.standcustom.api;
 
 
 
+import java.util.UUID;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -43,11 +46,15 @@ public class UserApi {
 
 
 
-    @PostMapping("")
     public ResponseEntity<Long> create(@RequestBody UserEntity oUserEntity) {
+        oUserEntity.setToken(UUID.randomUUID().toString()); // genero el token
+        oUserService.sendEmail(oUserEntity); // envio el email
         return ResponseEntity.ok(oUserService.create(oUserEntity));
     }
-
+      @RequestMapping(value="/confirm-account", method= {RequestMethod.GET, RequestMethod.POST})
+    public ResponseEntity<?> confirmUserAccount(@RequestParam("token")String confirmationToken) {
+        return oUserService.confirmCorreo(confirmationToken);
+    }
     @PutMapping("")
     public ResponseEntity<UserEntity> update(@RequestBody UserEntity oUserEntity) {
         return ResponseEntity.ok(oUserService.update(oUserEntity));

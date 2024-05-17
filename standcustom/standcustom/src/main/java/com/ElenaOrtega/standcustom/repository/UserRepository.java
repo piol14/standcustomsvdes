@@ -20,6 +20,11 @@ public interface UserRepository extends JpaRepository<UserEntity, Long> {
   Page<UserEntity> findByUserByNameOrSurnameOrLastnameContainingIgnoreCase(String searchText,
       String filter, String filter2, String filter3, Pageable pageable);
 
+      Optional<UserEntity> findByToken(String token);
+
+      Optional<UserEntity> findByTokenPassword(String tokenPassword);
+    
+      Optional<UserEntity> findByEmail(String email);
     Optional<UserEntity> findByUsernameAndPassword(String username, String password);
     @Query(value = "ALTER TABLE usuario AUTO_INCREMENT = 1", nativeQuery = true)
     void resetAutoIncrement();

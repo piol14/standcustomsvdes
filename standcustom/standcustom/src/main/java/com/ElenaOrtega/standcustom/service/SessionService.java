@@ -26,11 +26,12 @@ UserRepository oUserRepository;
     HttpServletRequest oHttpServletRequest;
 
     public String login(UserBean oUserBean) {
-        oUserRepository.findByUsernameAndPassword(oUserBean.getUsername(), oUserBean.getPassword())
-                .orElseThrow(() -> new ResourceNotFoundException("Wrong User or password"));
+        String strUsername = oUserBean.getUsername();
+
+        oUserRepository.findByUsernameAndPassword(strUsername,oUserBean.getPassword())
+                .orElseThrow(() -> new ResourceNotFoundException("Wrong User"));
         return JWTHelper.generateJWT(oUserBean.getUsername());
     }
-
  public String getSessionUsername() {        
     Object usernameAttribute = oHttpServletRequest.getAttribute("username");
     if (usernameAttribute instanceof String) {
