@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -23,6 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ElenaOrtega.standcustom.entity.UserEntity;
 import com.ElenaOrtega.standcustom.service.UserService;
+import com.ElenaOrtega.standcustom.entity.UserEntity;
 
 
 @CrossOrigin(origins = "*", allowedHeaders = "*", maxAge = 3600)
@@ -63,6 +65,15 @@ public class UserApi {
     @DeleteMapping("/{id}")
     public ResponseEntity<Long> delete(@PathVariable("id") Long id) {
         return ResponseEntity.ok(oUserService.delete(id));
+    }
+     @PostMapping("/signup")
+    public ResponseEntity<Long> signUp(@RequestBody UserEntity nuevoUsuario) {
+        try {
+            Long userId = oUserService.signUp(nuevoUsuario);
+            return ResponseEntity.ok(userId);
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+        }
     }
 
     @GetMapping("")

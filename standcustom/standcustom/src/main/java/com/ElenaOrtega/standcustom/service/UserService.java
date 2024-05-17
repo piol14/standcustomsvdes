@@ -169,6 +169,20 @@ public class UserService {
         oUserRepository.save(oUser);
         return ResponseEntity.ok("Email verified successfully!");        
     }
+    public Long signUp(UserEntity nuevoUsuario) {
+        if (  oUserRepository.findByUsername(nuevoUsuario.getUsername()).isPresent()) {
+            throw new RuntimeException("El nombre de usuario ya está en uso");
+        }
+
+        if (  oUserRepository.findByEmail(nuevoUsuario.getEmail()).isPresent()) {
+            throw new RuntimeException("El correo electrónico ya está registrado");
+        }
+
+        nuevoUsuario.setRole(true);
+
+        // Guarda el nuevo usuario en la base de datos
+        return oUserRepository.save(nuevoUsuario).getId();
+    }
 public Long populate(Integer amount) {
   oSessionService.onlyAdmins();
     for (int i = 0; i < amount; i++) {
