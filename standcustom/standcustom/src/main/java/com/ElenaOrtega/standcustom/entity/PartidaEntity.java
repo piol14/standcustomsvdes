@@ -26,7 +26,7 @@ public class PartidaEntity {
  @OneToMany(mappedBy = "partida", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
 private List<DetallePartidaEntity> partidas;
     
-    // Constructores, getters y setters
+   
 
     public PartidaEntity() {
     }
@@ -36,7 +36,7 @@ private List<DetallePartidaEntity> partidas;
     
     }
 
-    // Getters y setters
+  
 
     public Long getId() {
         return id;

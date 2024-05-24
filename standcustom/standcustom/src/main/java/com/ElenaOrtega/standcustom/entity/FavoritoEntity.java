@@ -29,7 +29,7 @@ public class FavoritoEntity {
     
     
         
-        // Constructores, getters y setters
+      
     
     
     
@@ -44,7 +44,7 @@ public class FavoritoEntity {
           
         }
     
-        // Getters y setters
+
     
         public Long getId() {
             return id;

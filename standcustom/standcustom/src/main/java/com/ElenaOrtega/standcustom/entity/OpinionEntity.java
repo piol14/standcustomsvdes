@@ -38,8 +38,7 @@ public class OpinionEntity {
     @JoinColumn(name = "id_stand")
     private StandEntity stand;
 
-    // Constructores, getters y setters
-
+   
     public OpinionEntity() {
     }
 
@@ -50,7 +49,7 @@ public class OpinionEntity {
         
     }
 
-    // Getters y setters
+
 
     public Long getId() {
         return id;

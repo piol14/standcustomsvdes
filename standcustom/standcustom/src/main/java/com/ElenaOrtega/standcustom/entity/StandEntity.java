@@ -25,7 +25,7 @@ public class StandEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    //Va a ser el nombre de la imagen 
+    
     private Long id;
 
     
@@ -70,7 +70,7 @@ public class StandEntity {
     
    
     @ManyToOne
-    @JoinColumn(name = "id_usuario") // Cambia esto según la columna de la clave foránea en tu tabla usuario
+    @JoinColumn(name = "id_usuario") 
     private UserEntity usuario;
 
   
@@ -87,7 +87,7 @@ private List<FavoritoEntity> favoritos;
 
    
 
-    // Constructor, getters y setters
+    
 
 
 
@@ -119,7 +119,7 @@ private List<FavoritoEntity> favoritos;
     }
 
    
-    // Getters y setters
+  
 
     public Long getId() {
         return id;

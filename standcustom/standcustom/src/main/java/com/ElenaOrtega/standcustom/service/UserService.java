@@ -20,7 +20,7 @@ import com.ElenaOrtega.standcustom.repository.UserRepository;
 
 import jakarta.servlet.http.HttpServletRequest;
 import com.ElenaOrtega.standcustom.entity.UserEntity;
-import com.ElenaOrtega.standcustom.service.EmailService; // Add missing import
+import com.ElenaOrtega.standcustom.service.EmailService; 
 
 
 @Service
@@ -67,28 +67,24 @@ public class UserService {
  public Page<UserEntity> getPage(Pageable pageable, String filter) {
     Page<UserEntity> page;
 
-    // Verificar si el filtro está vacío o nulo
+  
     if (filter == null || filter.isEmpty() || filter.trim().isEmpty()) {
-        // Si el filtro está vacío o nulo
+      
 
-        // Verificar si el usuario es un administrador
+       
         if (oSessionService.isAdmin()) {
-            // Si el usuario es un administrador, devolver todos los usuarios
+      
             page = oUserRepository.findAll(pageable);
         } else {
-            // Si el usuario no es un administrador, devolver una página vacía
+       
             page = Page.empty();
         }
     } else {
-        // Si hay un filtro
-
-        // Buscar usuarios que coincidan con el filtro en el nombre, apellido y otros campos
+     
         page = oUserRepository.findByUserByNameOrSurnameOrLastnameContainingIgnoreCase(
                 filter, filter, filter, filter, pageable);
     }
-
-    // Devolver la página de usuarios
-    return page;
+  return page;
 }
 
   
@@ -97,19 +93,19 @@ public class UserService {
         oSessionService.onlyAdmins();
         oUserEntity.setId(null);
         oUserEntity.setPassword(standCustomPASSWORD);
-        oUserEntity.setToken(UUID.randomUUID().toString()); // genero el token    
+        oUserEntity.setToken(UUID.randomUUID().toString()); 
         oUserRepository.save(oUserEntity);
-        this.sendEmail(oUserEntity); // envio el email
+        this.sendEmail(oUserEntity); 
         return oUserEntity.getId();        
     }
 
     public Long createForUsers(UserEntity oUserEntity) {
         oUserEntity.setId(null);
         oUserEntity.setPassword(standCustomPASSWORD);
-        oUserEntity.setToken(UUID.randomUUID().toString()); // genero el token
-        oUserEntity.setRole(true); // role = true -> user
+        oUserEntity.setToken(UUID.randomUUID().toString());
+        oUserEntity.setRole(true);
         oUserRepository.save(oUserEntity);
-        this.sendEmail(oUserEntity); // envio el email
+        this.sendEmail(oUserEntity);
         return oUserEntity.getId();
     }
 
@@ -180,7 +176,7 @@ public class UserService {
 
         nuevoUsuario.setRole(true);
 
-        // Guarda el nuevo usuario en la base de datos
+       
         return oUserRepository.save(nuevoUsuario).getId();
     }
 public Long populate(Integer amount) {

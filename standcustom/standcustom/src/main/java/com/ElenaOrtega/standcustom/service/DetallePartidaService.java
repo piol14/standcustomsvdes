@@ -53,7 +53,7 @@ public class DetallePartidaService {
                 if (partidaId == null || partidaId == 0) {
                     return detallePartidaRepository.findAll(pageable);
                 } else {
-                    // Filtrar por partidaId si está presente
+                 
                     return detallePartidaRepository.findByPartidaId(partidaId, pageable);
                 }
             } else {

@@ -77,17 +77,16 @@ public class OpinionService {
                
         OpinionEntity opinion = new OpinionEntity();
 
-        // Asignar un usuario existente
        opinion.setUsuario(userService.getOneRandom());
 
-        // Datos de la opinión
+
         opinion.setDescripcion("Opinión " + i);
    
 
-        // Asignar un stand existente
+     
          opinion.setStand(standService.getOneRandom());
 
-        // Guardar la opinión en la base de datos
+   
         opinionRepository.save(opinion);
     }
     return amount.longValue();

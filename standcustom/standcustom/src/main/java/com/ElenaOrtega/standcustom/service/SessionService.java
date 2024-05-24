@@ -37,7 +37,7 @@ UserRepository oUserRepository;
     if (usernameAttribute instanceof String) {
         return usernameAttribute.toString();
     } else {
-        // Add a log statement for debugging
+     
         System.out.println("Attribute 'username' is not a String or is null");
         return null;
     }

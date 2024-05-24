@@ -11,7 +11,6 @@ import com.ElenaOrtega.standcustom.entity.DetallePartidaEntity;
 
 public interface DetallePartidaRepository extends JpaRepository<DetallePartidaEntity, Long> {
 
-    //hazme findbystand
     Page<DetallePartidaEntity> findByStandId(Long id, Pageable pageable);
     Page<DetallePartidaEntity> findByPartidaId(Long id , Pageable pageable);
     Page<DetallePartidaEntity> findByUsuarioId (Long id , Pageable pageable);

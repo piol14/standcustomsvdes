@@ -63,14 +63,10 @@ oSessionService.onlyAdmins();
     for (int i = 0; i < amount; i++) {
 
         PartidaEntity partida = new PartidaEntity();
-        // Crear un ataque stand ficticio
-   
-        // Otros datos del stand
        
-        // Establecer la relación entre el stand y el ataque stand
        partida.setFecha("18-02-2024");
        
-        // Guardar el stand en la base de datos
+     
        partidaRepository.save(partida);
     }
     return amount.longValue();
@@ -84,14 +80,14 @@ public Long empty() {
         return partidaRepository.count();
     }
     public Long getLastCreatedId() {
-        // Obtener la última ID creada en la tabla de partidas
+      
         Pageable pageable = PageRequest.of(0, 1);
         Page<PartidaEntity> lastPartidaPage = partidaRepository.findAll(pageable);
         if (lastPartidaPage.hasContent()) {
             PartidaEntity lastPartida = lastPartidaPage.getContent().get(0);
             return lastPartida.getId();
         } else {
-            return null; // Si no hay ninguna partida en la base de datos
+            return null;
         }
 }
 }

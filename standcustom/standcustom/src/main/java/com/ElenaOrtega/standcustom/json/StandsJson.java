@@ -12,7 +12,7 @@ public class StandsJson {
     private String acierto;
 
     public StandsJson() {
-        // Constructor vacío requerido por Jackson
+        
     }
 
     public StandsJson(String nombre, String imagen, String descripcion, String velocidad, String desarollo, String alcance, String poder, String aguante, String acierto) {
@@ -27,7 +27,7 @@ public class StandsJson {
         this.acierto = acierto;
     }
 
-    // Getters y setters
+  
     public String getNombre() {
         return nombre;
     }

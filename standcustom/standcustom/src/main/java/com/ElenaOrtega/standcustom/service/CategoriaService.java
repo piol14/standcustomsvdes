@@ -70,7 +70,7 @@ oSessionService.onlyAdmins();
         return categoriaRepository.findAll(oPageable).getContent().get(0);
     }
 
-    //populate
+
    public Long populate(Integer amount) {
     oSessionService.onlyAdmins();
 

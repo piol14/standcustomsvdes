@@ -30,7 +30,6 @@ SessionService oSessionService;
             for (JsonNode standNode : standsNode) {
                 StandEntity stand = new StandEntity();
 
-                // Leer datos del JSON y asignarlos al objeto StandEntity
                 stand.setNombre(standNode.path("nombre").asText());
                 stand.setDescripcion(standNode.path("descripcion").asText());
                 stand.setImagen(standNode.path("imagen").asText());
@@ -43,9 +42,9 @@ SessionService oSessionService;
 
                 
                 
-                //stand.setUsuario(userService.getOneRandom());
+             
 
-                // Guardar el stand en la base de datos
+                
                 standRepository.save(stand);
             }
 

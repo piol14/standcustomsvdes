@@ -81,9 +81,7 @@ public StandEntity getOneRandom() {
     for (int i = 0; i < amount; i++) {
         StandEntity stand = new StandEntity();
 
-        // Crear un ataque stand ficticio
-       
-        // Otros datos del stand
+     
         stand.setNombre("Nombre del Stand " + i);
         stand.setDescripcion("Descripción del Stand " + i);
         stand.setImagen("http://localhost:8083/media/hermitpurple.png");
@@ -96,16 +94,16 @@ public StandEntity getOneRandom() {
 
         stand.setCategoria(categoriaService.getOneRandom());
 
-        // Establecer la relación entre el stand y el ataque stand
+       
         
         stand.setUsuario(userService.getOneRandom());
-        // Guardar el stand en la base de datos
+
         standRepository.save(stand);
     }
     return amount.longValue();
 }
  public Long populateStandsFromJson(String jsonFilePath) {
-        // Agregar lógica adicional si es necesario antes o después de poblar desde el JSON
+    
         return standPopulator.populateFromJson(jsonFilePath);
     }
 

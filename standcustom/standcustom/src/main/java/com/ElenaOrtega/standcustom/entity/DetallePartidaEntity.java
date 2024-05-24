@@ -26,7 +26,7 @@ public class DetallePartidaEntity {
     private PartidaEntity partida;
 
     
-    // Constructores, getters y setters
+   
 
 
 
@@ -41,7 +41,7 @@ public class DetallePartidaEntity {
          this.partida = partida;
     }
 
-    // Getters y setters
+   
 
     public Long getId() {
         return id;

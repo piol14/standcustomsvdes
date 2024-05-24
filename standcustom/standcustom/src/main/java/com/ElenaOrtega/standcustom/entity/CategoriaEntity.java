@@ -43,13 +43,13 @@ private List<StandEntity> stands;
 
     }
 
-    // Constructor
+   
     public CategoriaEntity(Long id, String nombre) {
         this.id = id;
         this.nombre = nombre;
     }
 
-    // Getters and Setters
+  
     public Long getId() {
         return id;
     }
