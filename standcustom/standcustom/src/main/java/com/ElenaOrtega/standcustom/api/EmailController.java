@@ -1,6 +1,6 @@
 package com.ElenaOrtega.standcustom.api;
 
-import java.util.Optional;
+
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +28,7 @@ import jakarta.validation.Valid;
 @RequestMapping("/email")
 @CrossOrigin
 public class EmailController {
-    @Autowired
+    
     EmailService oEmailService;
 
     @Autowired

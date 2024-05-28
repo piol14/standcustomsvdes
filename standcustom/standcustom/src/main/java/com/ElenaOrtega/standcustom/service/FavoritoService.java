@@ -1,6 +1,6 @@
 package com.ElenaOrtega.standcustom.service;
 
-import java.util.List;
+
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,12 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-import org.springframework.data.domain.Pageable;
-
 
 import com.ElenaOrtega.standcustom.entity.FavoritoEntity;
-import com.ElenaOrtega.standcustom.entity.OpinionEntity;
+
 import com.ElenaOrtega.standcustom.repository.FavoritoRepository;
+
+import org.springframework.data.domain.Pageable;
 
 @Service
 public class FavoritoService {

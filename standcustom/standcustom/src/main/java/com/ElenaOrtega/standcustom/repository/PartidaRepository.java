@@ -1,14 +1,13 @@
 package com.ElenaOrtega.standcustom.repository;
 
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ElenaOrtega.standcustom.entity.PartidaEntity;
-import com.ElenaOrtega.standcustom.entity.StandEntity;
+
 
 public interface PartidaRepository extends JpaRepository<PartidaEntity, Long> {
 

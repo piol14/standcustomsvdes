@@ -10,10 +10,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.ElenaOrtega.standcustom.entity.CategoriaEntity;
-import com.ElenaOrtega.standcustom.entity.PartidaEntity;
-import com.ElenaOrtega.standcustom.entity.CategoriaEntity;
 import com.ElenaOrtega.standcustom.repository.CategoriaRepository;
-import com.ElenaOrtega.standcustom.repository.DetallePartidaRepository;
+
 
 @Service
 public class CategoriaService {
@@ -35,7 +33,6 @@ private CategoriaRepository categoriaRepository;
     }
 
     public CategoriaEntity update(CategoriaEntity updatedCategoriaEntity) {
-         CategoriaEntity oAlquilerEntityFromDatabase = this.get(updatedCategoriaEntity.getId());
     oSessionService.onlyAdmins();
        
 
@@ -45,7 +42,7 @@ private CategoriaRepository categoriaRepository;
 
     public Long delete(Long id) {
 
-        CategoriaEntity oCategoriaEntityFromDatabase = this.get(id);
+      
         oSessionService.onlyAdmins();
         categoriaRepository.deleteById(id);
         return id;

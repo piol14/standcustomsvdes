@@ -21,7 +21,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ElenaOrtega.standcustom.entity.FavoritoEntity;
-import com.ElenaOrtega.standcustom.entity.OpinionEntity;
 import com.ElenaOrtega.standcustom.service.FavoritoService;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*", maxAge = 3600)

@@ -11,31 +11,28 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-import com.ElenaOrtega.standcustom.exception.ResourceNotFoundException;
-import com.ElenaOrtega.standcustom.entity.PartidaEntity;
 import com.ElenaOrtega.standcustom.entity.UserEntity;
+import com.ElenaOrtega.standcustom.exception.ResourceNotFoundException;
 import com.ElenaOrtega.standcustom.repository.UserRepository;
 
 import jakarta.servlet.http.HttpServletRequest;
-import com.ElenaOrtega.standcustom.entity.UserEntity;
-import com.ElenaOrtega.standcustom.service.EmailService; 
+
 
 
 @Service
 public class UserService {
 
-    private final String standCustomPASSWORD= "e2cac5c5f7e52ab03441bb70e89726ddbd1f6e5b683dde05fb65e0720290179e";
-  @Autowired
-     private SessionService oSessionService;
-    @Autowired
-    UserRepository oUserRepository;
+        private static final String STANDCUSTOMPASSWORD= "e2cac5c5f7e52ab03441bb70e89726ddbd1f6e5b683dde05fb65e0720290179e";
+      @Autowired
+         private SessionService oSessionService;
+        @Autowired
+        UserRepository oUserRepository;
 
+        @Autowired
+        HttpServletRequest oHttpServletRequest;
     @Autowired
-    HttpServletRequest oHttpServletRequest;
-@Autowired
-    private EmailService oEmailService;
+        private EmailService oEmailService;
  
 
     public UserEntity get(Long id) {
@@ -92,7 +89,7 @@ public class UserService {
    public Long create(UserEntity oUserEntity) {
         oSessionService.onlyAdmins();
         oUserEntity.setId(null);
-        oUserEntity.setPassword(standCustomPASSWORD);
+        oUserEntity.setPassword(STANDCUSTOMPASSWORD);
         oUserEntity.setToken(UUID.randomUUID().toString()); 
         oUserRepository.save(oUserEntity);
         this.sendEmail(oUserEntity); 
@@ -101,7 +98,7 @@ public class UserService {
 
     public Long createForUsers(UserEntity oUserEntity) {
         oUserEntity.setId(null);
-        oUserEntity.setPassword(standCustomPASSWORD);
+        oUserEntity.setPassword(STANDCUSTOMPASSWORD);
         oUserEntity.setToken(UUID.randomUUID().toString());
         oUserEntity.setRole(true);
         oUserRepository.save(oUserEntity);
@@ -137,11 +134,11 @@ public class UserService {
         if (oSessionService.isUser()) {
             
             updatedUserEntity.setRole(oUserEntityFromDatabase.getRole());
-            updatedUserEntity.setPassword(standCustomPASSWORD );
+            updatedUserEntity.setPassword(STANDCUSTOMPASSWORD );
             return oUserRepository.save(oUserEntityFromDatabase);
         } else {
             
-            updatedUserEntity.setPassword(standCustomPASSWORD );
+            updatedUserEntity.setPassword(STANDCUSTOMPASSWORD );
             return oUserRepository.save(oUserEntityFromDatabase);
         }
        
@@ -180,18 +177,18 @@ public class UserService {
         return oUserRepository.save(nuevoUsuario).getId();
     }
 public Long populate(Integer amount) {
-  oSessionService.onlyAdmins();
-    for (int i = 0; i < amount; i++) {
-        UserEntity usuario = new UserEntity();
-        usuario.setNombre("usuario" + i);
-     usuario.setEmail("email"+i+"@gmail.com");
-        usuario.setTelefono("1234567" + i);
-        usuario.setRole(false);
-        usuario.setUsername("mitio"+i);
-        usuario.setPassword( "e2cac5c5f7e52ab03441bb70e89726ddbd1f6e5b683dde05fb65e0720290179e" );
-        oUserRepository.save(usuario);
-    }
-    return amount.longValue();
+    oSessionService.onlyAdmins();
+        for (int i = 0; i < amount; i++) {
+                UserEntity usuario = new UserEntity();
+                usuario.setNombre("usuario" + i);
+                usuario.setEmail("email"+i+"@gmail.com");
+                usuario.setTelefono("1234567" + i);
+                usuario.setRole(false);
+                usuario.setUsername("mitio"+i);
+                usuario.setPassword(STANDCUSTOMPASSWORD);
+                oUserRepository.save(usuario);
+        }
+        return amount.longValue();
 }
 public Long empty() {
   oSessionService.onlyAdmins();

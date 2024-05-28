@@ -1,6 +1,6 @@
 package com.ElenaOrtega.standcustom.entity;
 
-import jakarta.persistence.CascadeType;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -8,9 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
+
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
@@ -42,7 +40,7 @@ public class OpinionEntity {
     public OpinionEntity() {
     }
 
-    public OpinionEntity(UserEntity usuario, String descripcion, int numeroEstrellas) {
+    public OpinionEntity(UserEntity usuario, String descripcion) {
         this.usuario = usuario;
         this.descripcion = descripcion;
     

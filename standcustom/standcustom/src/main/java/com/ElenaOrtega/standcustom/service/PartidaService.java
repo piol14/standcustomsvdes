@@ -1,7 +1,6 @@
 package com.ElenaOrtega.standcustom.service;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -9,10 +8,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-
 import com.ElenaOrtega.standcustom.entity.PartidaEntity;
-import com.ElenaOrtega.standcustom.entity.StandEntity;
-import com.ElenaOrtega.standcustom.entity.UserEntity;
 import com.ElenaOrtega.standcustom.repository.PartidaRepository;
 
 
@@ -25,7 +21,7 @@ public class PartidaService {
     @Autowired
     private SessionService oSessionService;
     @Autowired 
-    private UserService userService;
+   
     public PartidaEntity get(Long id) {
        
         return partidaRepository.findById(id).orElse(null);
@@ -48,7 +44,7 @@ public class PartidaService {
         return id;
     }
 
-    public Page<PartidaEntity> getPage(Pageable pageable, String strFilter) {
+    public Page<PartidaEntity> getPage(Pageable pageable) {
         
         return partidaRepository.findAll(pageable);
     }

@@ -41,10 +41,9 @@ public class PartidaApi {
     }
 
     @GetMapping("")
-    public ResponseEntity<Page<PartidaEntity>> getPage(
-            Pageable pageable,
-            @RequestParam(name = "filter", required = false) String strFilter) {
-        return ResponseEntity.ok(partidaService.getPage(pageable, strFilter));
+    public ResponseEntity<Page<PartidaEntity>> getPage(Pageable pageable)
+            {
+        return ResponseEntity.ok(partidaService.getPage(pageable));
     }
       @PostMapping("/populate/{amount}")
     public ResponseEntity<Long> populate(@PathVariable("amount") Integer amount) {

@@ -8,9 +8,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-
 import com.ElenaOrtega.standcustom.entity.StandEntity;
-import com.ElenaOrtega.standcustom.entity.UserEntity;
 import com.ElenaOrtega.standcustom.helper.StandPopulator;
 import com.ElenaOrtega.standcustom.repository.StandRepository;
 
@@ -76,7 +74,7 @@ public StandEntity getOneRandom() {
 
  public Long populate(Integer amount) {
    oSessionService.onlyAdmins();
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+    DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
     for (int i = 0; i < amount; i++) {
         StandEntity stand = new StandEntity();

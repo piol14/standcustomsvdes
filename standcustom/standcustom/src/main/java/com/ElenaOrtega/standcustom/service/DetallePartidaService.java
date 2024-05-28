@@ -6,7 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.ElenaOrtega.standcustom.entity.DetallePartidaEntity;
-import com.ElenaOrtega.standcustom.entity.OpinionEntity;
+
 import com.ElenaOrtega.standcustom.repository.DetallePartidaRepository;
 
 @Service

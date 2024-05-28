@@ -6,27 +6,23 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.ElenaOrtega.standcustom.entity.OpinionEntity;
-import com.ElenaOrtega.standcustom.entity.StandEntity;
-import com.ElenaOrtega.standcustom.entity.UserEntity;
+
 import com.ElenaOrtega.standcustom.repository.OpinionRepository;
-import com.ElenaOrtega.standcustom.repository.StandRepository;
-import com.ElenaOrtega.standcustom.repository.UserRepository;
+
 
 @Service
 public class OpinionService {
 
     @Autowired
     private OpinionRepository opinionRepository;
-    @Autowired
-    private UserRepository oUserRepository;
-    @Autowired
-    private StandRepository standRepository;
+    
  @Autowired 
  private SessionService oSessionService;
     @Autowired
     private UserService userService;
 
-    @Autowired StandService standService; 
+    @Autowired 
+    StandService standService; 
     public OpinionEntity get(Long id) {
         return opinionRepository.findById(id).orElse(null);
     }

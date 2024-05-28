@@ -38,7 +38,6 @@ UserRepository oUserRepository;
         return usernameAttribute.toString();
     } else {
      
-        System.out.println("Attribute 'username' is not a String or is null");
         return null;
     }
 }
@@ -107,7 +106,7 @@ UserRepository oUserRepository;
     }
 
     public void onlyAdminsOrUsersWithIisOwnData(Long id_user) {
-        if (this.isSessionActive()) {
+        if (Boolean.TRUE.equals(this.isSessionActive())) {
             if (!this.isAdmin()) {
                 if (!this.isUser()) {
                     throw new UnauthorizedException("Only admins or users can do this");

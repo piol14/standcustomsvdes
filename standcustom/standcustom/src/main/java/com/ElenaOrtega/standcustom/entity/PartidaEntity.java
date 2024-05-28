@@ -1,14 +1,12 @@
 package com.ElenaOrtega.standcustom.entity;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
-import org.hibernate.event.spi.LockEventListener;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
+
 
 @Entity
 @Table(name = "partida")
@@ -31,7 +29,7 @@ private List<DetallePartidaEntity> partidas;
     public PartidaEntity() {
     }
 
-    public PartidaEntity(String fecha, UserEntity ganador) {
+    public PartidaEntity(String fecha) {
         this.fecha = fecha;
     
     }
