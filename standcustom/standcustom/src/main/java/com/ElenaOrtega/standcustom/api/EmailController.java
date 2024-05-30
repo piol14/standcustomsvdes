@@ -40,7 +40,7 @@ public class EmailController {
     @Value("${spring.mail.username}")
     private String strMailFrom;
 
-    @PostMapping("/recover-password")
+    @PostMapping("/initial/recover-password")
     public ResponseEntity<?> sendEmailTemplate(@RequestBody EmailValuesDTO oEmailValuesDTO) {
       UserEntity oUserEntity = oUserService.getByEmail(oEmailValuesDTO.getMailTo());
 
