@@ -65,7 +65,7 @@ public class UserService {
     Page<UserEntity> page;
 
   
-    if (filter == null || filter.isEmpty() || filter.trim().isEmpty()) {
+
       
 
        
@@ -76,11 +76,7 @@ public class UserService {
        
             page = Page.empty();
         }
-    } else {
-     
-        page = oUserRepository.findByUserByNameOrSurnameOrLastnameContainingIgnoreCase(
-                filter, filter, filter, filter, pageable);
-    }
+    
   return page;
 }
 
