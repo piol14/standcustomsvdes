@@ -186,7 +186,7 @@ INSERT INTO `usuario` (`id`, `nombre`, `email`, `telefono`, `password`, `role`, 
 (1, 'tyrty', 'eof812@gmail.com', '12345678', '9141af3df42d66761144755e35a07b3c1bf29f1481d9cd0db3f45b2ad707e5c9', b'0', 'piolasto', '986e808d-8e96-40a3-a2e1-28ca34154d47', 1, 0, NULL),
 (27, 'usuario2', 'email2@gmail.com', '12345672', 'e2cac5c5f7e52ab03441bb70e89726ddbd1f6e5b683dde05fb65e0720290179e', b'0', 'mitio2', NULL, 1, 0, NULL),
 (28, 'usuario3', 'email3@gmail.com', '12345673', 'e2cac5c5f7e52ab03441bb70e89726ddbd1f6e5b683dde05fb65e0720290179e', b'0', 'mitio3', NULL, 1, 0, NULL),
-(29, 'usuario4', 'email4@gmail.com', '12345674', 'e2cac5c5f7e52ab03441bb70e89726ddbd1f6e5b683dde05fb65e0720290179e', b'0', 'mitio4', NULL, 1, 0, NULL),
+(29, 'usuario4', 'email4@gmail.com', '12345674', 'e2cac5c5f7e52ab03441bb70e89726ddbd1f6e5b683dde05fb65e0720290179e', b'1', 'mitio9', NULL, 1, 0, NULL),
 (30, 'vdvccs', 'eof0812@gmail.com', '12345678', 'e2cac5c5f7e52ab03441bb70e89726ddbd1f6e5b683dde05fb65e0720290179e', b'0', 'ewrwrwrwr', NULL, 1, 0, NULL);
 
 --
